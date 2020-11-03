@@ -1,0 +1,109 @@
+<div class="app-header" [ngClass]="{
+    'app-header--shadow' : globals.headerShadow,
+    'app-header--opacity-bg' : globals.headerTransparentBg
+    }">
+    <div class="app-header--pane">
+        <button [ngClass]="{'is-active' : globals.toggleSidebarMobile}" class="navbar-toggler hamburger hamburger--elastic toggle-mobile-sidebar-btn" (click)="toggleSidebarMobileOpen()" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        <!-- <app-header-search></app-header-search> -->
+        <app-header-menu></app-header-menu>
+    </div>
+    
+   
+    <div class="app-header--pane">
+
+        
+        <div class="user-box position-relative ml-2" dropdown>
+            <a dropdownToggle
+                    [routerLink]=""
+                    class="p-0 d-flex align-items-center"
+            >
+              <div class="d-block p-0 avatar-icon-wrapper">
+                <span class="badge badge-circle badge-success p-top-a">Online</span>
+                <div class="avatar-icon rounded">
+                  <img src="{{imageHost+image}}" alt="..." />
+                </div>
+              </div>
+              <div class="d-none d-xl-block pl-2">
+                <div class="font-weight-bold">
+                  {{name}}
+                </div>
+                <span class="text-black-50">
+                  {{email}}
+                </span>
+
+              
+              </div>
+              <span class="pl-1 pl-xl-3"
+              ><fa-icon [icon]="['fas', 'angle-down']" class="opacity-5"></fa-icon
+              ></span>
+            </a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-menu-lg p-0">
+          
+          
+          
+              <ul class="list-group list-group-flush text-left bg-transparent">
+                <li class="list-group-item rounded-top">
+                  <ul class="nav nav-neutral-primary nav-pills flex-column">
+                   
+                    
+                    <li class="nav-item text-center">   
+                      <a class="nav-link" [routerLink]="'/dash/contactUs'"
+                       style="width: 50%; margin: auto;text-align: center;">
+                        {{"Messages" | translate}}
+                      </a>
+                    </li>
+                  
+                    
+                  
+                    
+
+                    <li class="nav-item text-center">
+                      <a class="nav-link" [routerLink]="'/dash/aboutUs'" 
+                      style="width: 50%; margin: auto; text-align: center; margin-bottom: 0px !important;">
+                        {{"About Us" | translate}} 
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- <li class="list-group-item bg-transparent p-0">
+                  <div class="grid-menu grid-menu-2col">
+                    <div class="py-3">
+                      <div class="d-flex justify-content-center">
+                        <div class="d-flex align-items-center">
+                          <div>
+                            <fa-icon
+                                    [icon]="['far', 'chart-bar']"
+                                    class="font-size-xxl text-info"
+                            ></fa-icon>
+                          </div>
+                          <div class="pl-3 line-height-sm">
+                            <b class="font-size-lg">$9,693</b>
+                            <span class="text-black-50 d-block">revenue</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li> -->
+               
+                
+              </ul>
+          
+              <div class="card-footer bg-white p-3 text-center d-block">
+                <a [routerLink]="'/dash/profile'" class="btn btn-sm btn-dark mr-1">
+                    <fa-icon [icon]="['far', 'user']" class="mr-1"></fa-icon>
+                     {{"Profile" | translate}} 
+                </a>
+                <a (click)="logout()" class="btn btn-sm btn-outline-danger ml-1" tooltip="Sign out">
+                    <fa-icon style="color: red;" [icon]="['fas', 'sign-out-alt']" class="mr-1"></fa-icon>
+                </a>
+            </div>
+            </div>
+          </div>
+          
+    </div>
+</div>

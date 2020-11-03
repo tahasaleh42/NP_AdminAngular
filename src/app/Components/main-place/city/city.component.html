@@ -1,0 +1,296 @@
+<div class="card card-box mb-4">
+  <div class="px-4 py-3 d-block d-md-flex justify-content-between align-items-center text-center text-md-left">
+      <div class="d-flex flex-md-row flex-column align-items-center">
+
+          <a href="javascript:history.back()"
+          class="btn btn-neutral-primary btn-sm font-weight-bold m-2" style="background-color:#000 ;
+         border-color: #000; color: white; margin-right: 50px !important;">
+             <span class="btn-wrapper--icon">
+                 <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+             </span>
+             {{"Back" | translate }}
+         </a>
+
+          <div class="font-size-lg font-weight-bold" style="cursor: pointer;"  (click)="showPage('list')">
+               {{"Areas" | translate }}
+          </div>
+          <div class="mx-3 d-none d-md-block">
+              <div class="divider-v position-relative"></div>
+              <div class="divider-v position-relative"></div>
+          </div>
+          <span class="text-black-50 font-size-md">
+              {{taskArrlength}} {{"in total" | translate }}
+          </span>
+          <div  class="search-wrapper search-wrapper--grow my-3 my-md-0 ml-0 ml-md-4">
+            <span class="icon-wrapper text-black">
+              <fa-icon [icon]="['fas', 'search']"></fa-icon>
+            </span>
+              <input [(ngModel)]='listFilter'[ngModelOptions]="{standalone: true}"  class="form-control"
+              placeholder="Search Area..." type="search">
+          </div>
+      </div>
+      <div class="d-block d-md-flex align-items-center">
+
+
+
+          <button  (click)="showPage('add')" class="btn btn-neutral-primary btn-sm font-weight-bold">
+              {{"Add New Area" | translate }}
+
+          </button>
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<div *ngIf="currentPage === 'list'">
+
+  <div class="row">
+      <div class="col-xl-4 col-lg-6" *ngFor="let s of filteredAllDiscussion  | paginate: { itemsPerPage: 6, currentPage: p }">
+          <div class="card mb-5">
+              <div class="card-header" style="float: right; text-align: right;">
+
+                  <a (click)="updatetask('edit',s.id)" class="btn btn-neutral-primary btn-sm  m-1" tooltip="Edit">
+                      <span class="pe-7s-note font-size-lg"></span>
+
+                  </a>
+
+                  <a (click)="deleteTask(s.id)"  class="btn btn-danger btn-sm m-1" tooltip="Delete">
+                      <span   class="pe-7s-trash font-size-xl"></span>
+
+                  </a>
+
+              </div>
+
+              <div class="card-body ">
+                  <div class="font-size-lg text-center" >
+                      {{ s.title }}
+                  </div>
+                  <hr style="width: 70%;">
+
+
+
+              </div>
+
+
+          </div>
+
+
+      </div>
+
+
+  </div>
+  <div class="d-flex justify-content-center">
+
+      <pagination-controls previousLabel="Previous" nextLabel="Next"
+       class="pagination-icons pagination-first" (pageChange)="p = $event"></pagination-controls>
+
+  </div>
+
+
+
+
+</div>
+
+<div *ngIf="currentPage === 'add'">
+
+
+  <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+    {{ "Add New Area" | translate }}
+  </div><br>
+  <div class="card cardinmob" >
+
+      <form [formGroup]="Userform" (submit)="onSubmit(Userform.value)">
+
+
+              <div class="form-row">
+
+                  <div class="col-md-12">
+                      <div class="position-relative form-group"><label for="title">{{"Name In English" | translate }}</label>
+                      <input class="form-control " id="title"  formControlName="title"
+                      name="title" placeholder="" type="text"></div>
+                  </div>
+
+
+
+                    <div class="col-md-12">
+                      <div class="position-relative form-group"><label for="titleA">{{"Name In Arabic" | translate }}</label>
+                          <input class="form-control " id="titleA"  formControlName="titleA"
+                          name="titleA" placeholder="" type="text">
+                      </div>
+                  </div>
+
+
+
+                  <div class="form-group col-md-6 mb-2">
+                      <label for="Longitude">{{"Longitude" | translate }} </label>
+                      <input formControlName="Longitude" type="number" id="Longitude"  [(ngModel)]='lngx'
+                        class="form-control  " placeholder="">
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 mb-2">
+                      <label for="Latitude">{{"Latitude" | translate }} </label>
+                      <input formControlName="Latitude" type="number" id="Latitude"  [(ngModel)]='latx'
+                        class="form-control  " placeholder="">
+
+
+                    </div>
+
+
+                    <div class="form-group col-md-12" style="text-align: center; width: 50%; margin: auto;">
+                      <button style="text-align: center; width: 50%; margin: auto;" type="button" (click)="open(content)"
+                        class="btn btn-raised btn-warning mr-1">
+                        {{"Determin on the map" | translate}}  <span class="pe-7s-map-2 font-size-lg"></span>
+                      </button>
+                    </div>
+              </div>
+
+              <div style="float: right;">
+                  <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2">{{"Back" | translate }}</button>
+
+                  <button type="submit" class="mt-2 btn btn-primary m-2"> {{"Create" | translate }} </button>
+
+              </div>
+
+
+
+
+      </form>
+
+
+
+  </div>
+
+
+</div>
+
+
+<div *ngIf="currentPage === 'edit'">
+
+
+  <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+    {{ "Update Area" | translate }}
+  </div><br>
+  <div class="card cardinmob" >
+
+      <form [formGroup]="Userform" (submit)="onUpdate(Userform.value)">
+
+
+
+              <div class="form-row">
+
+                  <div class="col-md-12">
+                      <div class="position-relative form-group"><label for="title">{{"Name In English" | translate }}</label>
+                      <input class="form-control " id="title"  formControlName="title"
+                      name="title" placeholder="" type="text"></div>
+                  </div>
+
+
+
+                    <div class="col-md-12">
+                      <div class="position-relative form-group"><label for="titleA">{{"Name In Arabic" | translate }}</label>
+                          <input class="form-control " id="titleA"  formControlName="titleA"
+                          name="titleA" placeholder="" type="text">
+                      </div>
+                  </div>
+
+
+
+                  <div class="form-group col-md-6 mb-2">
+                      <label for="Longitude">{{"Longitude" | translate }} </label>
+                      <input formControlName="Longitude" type="number" id="Longitude"  [(ngModel)]='lngx'
+                        class="form-control  " placeholder="">
+
+
+                    </div>
+
+                    <div class="form-group col-md-6 mb-2">
+                      <label for="Latitude">{{"Latitude" | translate }} </label>
+                      <input formControlName="Latitude" type="number" id="Latitude"  [(ngModel)]='latx'
+                        class="form-control  " placeholder="">
+
+
+                    </div>
+
+
+                    <div class="form-group col-md-12" style="text-align: center; width: 50%; margin: auto;">
+                      <button style="text-align: center; width: 50%; margin: auto;" type="button" (click)="open(content)"
+                        class="btn btn-raised btn-warning mr-1">
+                        {{"Determin on the map" | translate}}  <span class="pe-7s-map-2 font-size-lg"></span>
+                      </button>
+                    </div>
+              </div>
+
+
+
+              <div style="float: right;">
+                  <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2">{{"Back" | translate }}</button>
+
+                  <button type="submit" class="mt-2 btn btn-primary m-2"> {{"Update" | translate }} </button>
+
+              </div>
+
+
+
+
+      </form>
+
+
+
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header text-center">
+      <h4 class="modal-title text-center">{{"Determin on the map" | translate}} </h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+
+      <div class="modal-body">
+          <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClick($event)">
+              <agm-marker *ngIf="locationChosen" [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+
+          <span style="float: left;"> langtude: {{ this.lng }}</span>
+          <span style="float: right;"> Latitude: {{ this.lat }}</span>
+
+      </div>
+
+  </div>
+  <div class="modal-footer">
+
+      <button (click)="c('Close click')" class="btn btn-raised btn-warning mr-1">
+          <i class="ft-x"></i> Cancel
+      </button>
+
+
+
+      <button (click)="mapDone()" (click)="c('Close click')"
+       class="btn btn-raised btn-primary">
+          <i class="fa fa-check-square-o"></i> Done
+      </button>
+
+
+
+  </div>
+</ng-template>
+

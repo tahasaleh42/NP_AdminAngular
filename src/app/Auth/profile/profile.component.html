@@ -1,0 +1,315 @@
+<div class="row" >
+    <div class="col-xl-4 col-lg-6" >
+        <div class="bg-midnight-bloom p-3 rounded text-white h-100">
+            <div class="d-flex align-items-start justify-content-between">
+                <div class="avatar-icon-wrapper d-100"  style="width: 50%; margin: auto;">
+                    <span class="badge badge-circle badge-success">Online</span>
+                    <div class="avatar-icon d-100" style="width: 50%; margin: auto;">
+                       <img alt="..." src="{{imageHost+image}}"/>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="font-weight-bold font-size-lg d-flex align-items-center mb-3"> </div>
+
+            <p class="mb-2 font-size-md text-white-50 text-center">{{name}}</p>
+            <p class="mb-2 font-size-md text-white-50 text-center">{{email}}</p>
+            <p class="mb-2 font-size-md text-white-50 text-center">{{phone}}</p>
+
+
+
+            <div class="font-weight-bold font-size-lg d-flex align-items-center mb-3"> </div>
+
+            <!-- <div class="font-weight-bold font-size-lg d-flex align-items-center mt-2 mb-0">
+                <span>{{name}} </span>
+            </div>
+            <p class="mb-4 font-size-md text-white-50">{{email}}</p>
+
+            <p class="mb-4 font-size-md text-white-50">{{address}}</p>
+
+
+
+
+            <div class="divider opacity-2 my-4"></div>
+                <span> About Shop</span>
+            </div>
+
+
+            <small class="text-white-50">
+                <b class="d-block pb-1 text-white-50">{{about}} </b>
+
+            </small> -->
+
+
+        </div>
+    </div>
+    <div class="col-xl-8 col-lg-6">
+        <tabset [justified]="true" class="tabs-animated tabs-animated-line mt-5 mt-lg-0" type="tabs">
+            <!-- <tab>
+                <ng-template tabHeading>
+                    <span class="d-flex justify-content-center align-items-center pb-3">
+
+                        <span class="d-inline-block w-auto">Shop Social Media</span>
+
+                    </span>
+                </ng-template>
+
+
+
+                <div class="card card-box">
+                    <div class="card-header bg-light">
+                        <div class="card-header--title">
+                            <b class="font-size-lg d-flex align-items-center">Social interests</b>
+                        </div>
+                        <div class="card-header--actions">
+                            <a    class="btn btn-link btn-link-primary p-0 font-size-xl text-primary" tooltip="View options">
+                                <fa-icon [icon]="['fas', 'ellipsis-h']"></fa-icon>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="px-5 pt-5">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-6 col-xl-6">
+                                <div class="feature-box d-flex align-items-start text-black mb-5">
+                                    <div>
+                                        <div class="bg-brand-facebook text-center text-white font-size-xl d-50 rounded-circle">
+                                            <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3">
+                                        <h3 class="font-size-lg font-weight-bold">Facebook</h3>
+
+
+                                        <a href="{{facebook}}" target="_blanck" class="btn btn-sm btn-outline-dark" type="button">View profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-xl-6">
+                                <div class="feature-box d-flex align-items-start text-black mb-5">
+                                    <div>
+                                        <div class="bg-brand-github text-center text-white font-size-xl d-50 rounded-circle">
+                                            <fa-icon [icon]="['fab', 'instagram']"></fa-icon>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3">
+                                        <h3 class="font-size-lg font-weight-bold">instagram</h3>
+
+
+                                        <a href="{{instagram}}" target="_blanck" class="btn btn-sm btn-outline-dark" type="button">View profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-xl-6">
+                                <div class="feature-box d-flex align-items-start text-black mb-5">
+                                    <div>
+                                        <div class="bg-brand-twitter text-center text-white font-size-xl d-50 rounded-circle">
+                                            <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+                                        </div>
+                                    </div>
+                                    <div class="pl-3">
+                                        <h3 class="font-size-lg font-weight-bold">Twitter</h3>
+
+
+                                        <a href="{{twitter}}" target="_blanck" class="btn btn-sm btn-outline-dark" type="button">View profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-xl-6">
+                                <div class="feature-box d-flex align-items-start text-black mb-5">
+                                    <div>
+                                        <div class="bg-brand-dribbble text-center text-white font-size-xl d-50 rounded-circle">
+                                            <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+
+                                        </div>
+                                    </div>
+                                    <div class="pl-3">
+                                        <h3 class="font-size-lg font-weight-bold">snap</h3>
+
+
+                                        <a href="{{snap}}" target="_blanck" class="btn btn-sm btn-outline-dark" type="button">View profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tab> -->
+            <tab>
+                <ng-template tabHeading>
+                    <span class="d-flex justify-content-center align-items-center pb-3">
+
+                        <span class="d-inline-block w-auto">{{"Update Profile" | translate}}</span>
+
+
+                    </span>
+                </ng-template>
+                <div class="text-left mt-5 mb-5">
+                    <div class="card cardinmob" >
+                        <form [formGroup]="Userform" (submit)="onUpdate(Userform.value)">
+
+
+                          <div class="form-row">
+
+                            <div class="col-lg-12 col-md-12">
+
+
+                              <div class="text-center" style="text-align: center; width: 100% ;">
+                                <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
+                              </div>
+                              <br>
+
+                              <fieldset class="form-group">
+
+                                <div class="custom-file  mx-auto d-block">
+                                  <input type="file" accept="image/*" #fileUploader (change)="showPreview($event)" class="custom-file-input"
+                                    id="inputGroupFile01">
+                                  <label class="custom-file-label" for="inputGroupFile01">Choose
+                                    Main Image</label>
+                                </div>
+
+
+
+                              </fieldset>
+                            </div>
+
+
+
+
+                            <div class="col-md-12">
+                              <div class="position-relative form-group"><label for="fullName">{{"Full Name" | translate }}</label>
+                                <input class="form-control" id="fullName" formControlName="fullName" name="fullName" placeholder=""
+                                  type="text"></div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="position-relative form-group"><label for="homephone">{{"Home Phone" | translate }}</label>
+                                <input class="form-control" id="homephone" formControlName="homephone" name="homephone" placeholder=""
+                                  type="number"></div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="position-relative form-group"><label for="phone"> {{"Phone" | translate }}</label>
+                                <input class="form-control" id="phone" formControlName="phone" name="phone" placeholder="" type="number">
+                              </div>
+                            </div>
+
+                            <div class="col-md-12">
+                              <div class="position-relative form-group"><label for="email">{{"Email" | translate }}</label>
+                                <input class="form-control" id="email" formControlName="email" name="email" placeholder="" type="email">
+                              </div>
+                            </div>
+
+                            <div class="col-md-12">
+                              <div class="position-relative form-group"><label
+                                  for="identificationNumber">{{"ID Number" | translate }}</label>
+                                <input class="form-control" id="identificationNumber" formControlName="identificationNumber"
+                                  name="identificationNumber" placeholder="" type="number"></div>
+                            </div>
+
+
+
+                            <div class="form-group col-md-12 mb-2">
+                              <label for="qualification">{{"Qualification" | translate}} </label>
+
+                              <select formControlName="qualification"
+                                class="custom-select" id="qualification">
+
+                                <option value="Primary">{{"Primary" | translate }}</option>
+                                <option value="Intermediate ">{{"Intermediate" | translate }}</option>
+                                <option value="Secondary">{{"Secondary" | translate }}</option>
+                                <option value="Diploma">{{"Diploma" | translate }}</option>
+                                <option value="Bachelor">{{"Bachelor" | translate }}</option>
+                                <option value="Master">{{"Master" | translate }}</option>
+                                <option value="Doctorate">{{"Doctorate" | translate }}</option>
+                                <option value="Others">{{"Others" | translate }}</option>
+                              </select>
+
+                            </div>
+
+
+                            <div class="col-md-12">
+                              <div class="position-relative form-group"><label for="specialization">{{"Specialization" | translate }}</label>
+                                <input class="form-control" id="specialization" formControlName="specialization" name="specialization"
+                                  placeholder="" type="text"></div>
+                            </div>
+
+                            <div class="form-group col-md-12 mb-2">
+                              <label for="employmentStatus">{{"Employment Status" | translate}} </label>
+
+                              <select   formControlName="employmentStatus"
+                                class="custom-select  " id="employmentStatus">
+
+                                <option value="Student">{{"Student" | translate }}</option>
+                                <option value="Employer">{{"Employer" | translate }}</option>
+                                <option value="Others">{{"Others" | translate }}</option>
+                              </select>
+
+                            </div>
+
+
+                            <div class="col-md-12">
+                              <div class="position-relative form-group"><label for="nationality">{{"Nationality" | translate }}</label>
+                                <input class="form-control  " id="nationality" formControlName="nationality" name="nationality"
+                                  placeholder="" type="text"></div>
+                            </div>
+
+                            <div class="col-md-12">
+                              <div class="position-relative form-group"><label for="city">{{"City" | translate }}</label>
+                                <input class="form-control  " id="city" formControlName="city" name="city"
+                                  placeholder="" type="text"></div>
+                            </div>
+
+
+                            <!-- <div class="form-group col-md-12 mb-2">
+                              <label for="place_Id">{{"Country" | translate}} </label>
+
+                              <select (change)="showArea($event.target.value)" formControlName="place_Id"
+                                class="custom-select  " id="place_Id">
+
+                                <option *ngFor="let c of city" value="{{c.id}}">{{c.title}}</option>
+                              </select>
+
+                            </div>
+
+                            <div class="form-group col-md-12 mb-2">
+                              <label for="city_Id">{{"Area" | translate}} </label>
+
+                              <select formControlName="city_Id" id="city_Id" class="custom-select  ">
+
+                                <option *ngFor="let c of allArea" value="{{c.id}}">{{c.title}}</option>
+                              </select>
+
+                            </div> -->
+
+
+
+                            <div class="col-md-12">
+                              <div class="position-relative form-group"><label for="password">{{"Password" | translate }}</label>
+                                <input class="form-control   " id="password" formControlName="password" name="password" placeholder=""
+                                  type="password"></div>
+                            </div>
+
+
+                          </div>
+
+
+
+                                <div style="float: right;">
+                                    <button type="submit" class="mt-2 btn btn-primary m-2"> {{"Update" | translate}}</button>
+                                </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+
+            </tab>
+        </tabset>
+    </div>
+</div>
+<div class="sidebar-inner-layout-overlay"></div>
+<sk-chasing-dots *ngIf="loading" [color]="'#3c44b1'"></sk-chasing-dots>

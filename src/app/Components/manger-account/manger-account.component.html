@@ -1,0 +1,462 @@
+<div class="card card-box mb-4">
+    <div class="px-4 py-3 d-block d-md-flex justify-content-between align-items-center text-center text-md-left">
+        <div class="d-flex flex-md-row flex-column align-items-center">
+            <div class="font-size-lg font-weight-bold" style="cursor: pointer;"  (click)="showPage('list')">
+                {{"MangerAccount" | translate }}
+            </div>
+            <div class="mx-3 d-none d-md-block">
+                <div class="divider-v position-relative"></div>
+                <div class="divider-v position-relative"></div>
+            </div>
+            <span class="text-black-50 font-size-md">
+                {{taskArrlength}} {{  "in total" | translate }}
+            </span>
+            <div  class="search-wrapper search-wrapper--grow my-3 my-md-0 ml-0 ml-md-4">
+              <span class="icon-wrapper text-black">
+                <fa-icon [icon]="['fas', 'search']"></fa-icon>
+              </span>
+                <input [(ngModel)]='listFilter' [ngModelOptions]="{standalone: true}"  class="form-control"
+                placeholder="Search MangerAccount..." type="search">
+            </div>
+        </div>
+        <div class="d-block d-md-flex align-items-center">
+            <button  (click)="showPage('add')" class="btn btn-neutral-primary btn-sm font-weight-bold">
+                  {{  "Add New Account" | translate }}
+            </button>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div *ngIf="currentPage === 'list'">
+    <div class="card card-box mb-5">
+
+        <div class="table-responsive">
+            <table class="table table-hover text-nowrap mb-0">
+                <thead>
+                <tr>
+                  <th class="bg-white text-left">{{"ID" | translate }}</th>
+                  <th class="bg-white text-center"> {{"Image" | translate }}</th>
+                  <th class="bg-white text-center"> {{"Name" | translate }}</th>
+                  <th class="bg-white text-center"> {{"Email" | translate }}</th>
+                  <th class="bg-white text-center"> {{"Phone" | translate }}</th>
+                  <th class="bg-white text-center"> {{"ID Number" | translate }}</th>
+                  <th class="bg-white text-center">{{"Actions" | translate }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let s of filteredAllDiscussion | paginate: { itemsPerPage: 8, currentPage: p }">
+                    <td class="font-weight-bold">
+                        #{{s.id}}
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-icon-wrapper avatar-icon-sm mr-2">
+                                <div class="avatar-icon"><img alt="..." src="{{imageHost+s.image}}"/></div>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+                    </td>
+                    <td  class="text-center" style="font-family: 'Cairo', sans-serif;">
+                      {{s.fullName}}
+
+
+                    </td>
+                    <td class="text-center" >
+                        {{s.email}}
+
+                    </td>
+
+                    <td  class="text-center" style="font-family: 'Cairo', sans-serif;">
+                        {{s.phone}}
+
+                    </td>
+
+
+                    <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                      {{s.identificationNumber}}
+
+                    </td>
+
+
+                    <td class="text-center">
+
+                        <a *ngIf="s.statue == 3" (click)="updatetask('edit',s.id)" class="btn btn-neutral-primary btn-sm  m-1" tooltip="Edit">
+                            <span class="pe-7s-note font-size-lg"></span>
+
+                        </a>
+                        <a *ngIf="s.statue == 3" (click)="deleteTask(s.id)" class="btn btn-danger btn-sm m-1" tooltip="Delete">
+                            <span class="pe-7s-trash font-size-lg "></span>
+
+                        </a>
+
+
+                    </td>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer py-3 d-flex justify-content-center">
+            <pagination-controls previousLabel="Previous" nextLabel="Next"
+            class="pagination-icons pagination-first" (pageChange)="p = $event"></pagination-controls>
+
+
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="currentPage === 'add'">
+
+    <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+           {{"Add New Account" | translate }}
+    </div><br>
+    <div class="card cardinmob" >
+        <form [formGroup]="Userform" (submit)="onSubmit(Userform.value)">
+
+
+
+          <div class="form-row">
+
+            <div class="col-lg-12 col-md-12">
+
+
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="image/*" #fileUploader (change)="showPreview($event)" class="custom-file-input"
+                    id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose
+                    Main Image</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="fullName">{{"Full Name" | translate }}</label>
+                <input class="form-control  " id="fullName" formControlName="fullName" name="fullName" placeholder=""
+                  type="text"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="position-relative form-group"><label for="homephone">{{"Home Phone" | translate }}</label>
+                <input class="form-control  " id="homephone" formControlName="homephone" name="homephone" placeholder=""
+                  type="number"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="position-relative form-group"><label for="phone"> {{"Phone" | translate }}</label>
+                <input class="form-control   " id="phone" formControlName="phone" name="phone" placeholder="" type="number">
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="email">{{"Email" | translate }}</label>
+                <input class="form-control   " id="email" formControlName="email" name="email" placeholder="" type="email">
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label
+                  for="identificationNumber">{{"ID Number" | translate }}</label>
+                <input class="form-control  " id="identificationNumber" formControlName="identificationNumber"
+                  name="identificationNumber" placeholder="" type="number"></div>
+            </div>
+
+
+
+            <div class="form-group col-md-12 mb-2">
+              <label for="qualification">{{"Qualification" | translate}} </label>
+
+              <select formControlName="qualification"
+                class="custom-select" id="qualification">
+
+                <option value="Primary">{{"Primary" | translate }}</option>
+                <option value="Intermediate ">{{"Intermediate" | translate }}</option>
+                <option value="Secondary">{{"Secondary" | translate }}</option>
+                <option value="Diploma">{{"Diploma" | translate }}</option>
+                <option value="Bachelor">{{"Bachelor" | translate }}</option>
+                <option value="Master ">{{"Master" | translate }}</option>
+                <option value="Doctorate ">{{"Doctorate" | translate }}</option>
+                <option value="Others ">{{"Others" | translate }}</option>
+              </select>
+
+            </div>
+
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="specialization">{{"Specialization" | translate }}</label>
+                <input class="form-control" id="specialization" formControlName="specialization" name="specialization"
+                  placeholder="" type="text"></div>
+            </div>
+
+            <div class="form-group col-md-12 mb-2">
+              <label for="employmentStatus">{{"Employment Status" | translate}} </label>
+
+              <select   formControlName="employmentStatus"
+                class="custom-select  " id="employmentStatus">
+
+                <option value="Student">{{"Student" | translate }}</option>
+                <option value="Employer  ">{{"Employer" | translate }}</option>
+                <option value="Others ">{{"Others" | translate }}</option>
+              </select>
+
+            </div>
+
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="nationality">{{"Nationality" | translate }}</label>
+                <input class="form-control  " id="nationality" formControlName="nationality" name="nationality"
+                  placeholder="" type="text"></div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="city">{{"City" | translate }}</label>
+                <input class="form-control  " id="city" formControlName="city" name="city"
+                  placeholder="" type="text"></div>
+            </div>
+
+
+            <!-- <div class="form-group col-md-12 mb-2">
+              <label for="place_Id">{{"Country" | translate}} </label>
+
+              <select (change)="showArea($event.target.value)" formControlName="place_Id"
+                class="custom-select  " id="place_Id">
+
+                <option *ngFor="let c of city" value="{{c.id}}">{{c.title}}</option>
+              </select>
+
+            </div>
+
+            <div class="form-group col-md-12 mb-2">
+              <label for="city_Id">{{"Area" | translate}} </label>
+
+              <select formControlName="city_Id" id="city_Id" class="custom-select  ">
+
+                <option *ngFor="let c of allArea" value="{{c.id}}">{{c.title}}</option>
+              </select>
+
+            </div> -->
+
+
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="password">{{"Password" | translate }}</label>
+                <input class="form-control   " id="password" formControlName="password" name="password" placeholder=""
+                  type="password"></div>
+            </div>
+
+
+          </div>
+
+
+
+                <div style="float: right;">
+                    <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2">{{"Back" | translate }}</button>
+
+                    <button [disabled]="!isSubmitted"  type="submit" class="mt-2 btn btn-primary m-2"> {{"Create" | translate }} </button>
+
+                </div>
+
+
+
+
+        </form>
+
+
+
+    </div>
+
+
+</div>
+
+<div *ngIf="currentPage === 'edit'">
+    <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+            {{"Update Customer"|translate}}
+    </div><br>
+    <div class="card cardinmob" >
+        <form [formGroup]="Userform" (submit)="onUpdate(Userform.value)">
+
+
+          <div class="form-row">
+
+            <div class="col-lg-12 col-md-12">
+
+
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="image/*" #fileUploader (change)="showPreview($event)" class="custom-file-input"
+                    id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose
+                    Main Image</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="fullName">{{"Full Name" | translate }}</label>
+                <input class="form-control  " id="fullName" formControlName="fullName" name="fullName" placeholder=""
+                  type="text"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="position-relative form-group"><label for="homephone">{{"Home Phone" | translate }}</label>
+                <input class="form-control  " id="homephone" formControlName="homephone" name="homephone" placeholder=""
+                  type="number"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="position-relative form-group"><label for="phone"> {{"Phone" | translate }}</label>
+                <input class="form-control   " id="phone" formControlName="phone" name="phone" placeholder="" type="number">
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="email">{{"Email" | translate }}</label>
+                <input class="form-control   " id="email" formControlName="email" name="email" placeholder="" type="email">
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label
+                  for="identificationNumber">{{"ID Number" | translate }}</label>
+                <input class="form-control  " id="identificationNumber" formControlName="identificationNumber"
+                  name="identificationNumber" placeholder="" type="number"></div>
+            </div>
+
+
+
+            <div class="form-group col-md-12 mb-2">
+              <label for="qualification">{{"Qualification" | translate}} </label>
+
+              <select formControlName="qualification"
+                class="custom-select" id="qualification">
+
+                <option value="Primary">{{"Primary" | translate }}</option>
+                <option value="Intermediate ">{{"Intermediate" | translate }}</option>
+                <option value="Secondary">{{"Secondary" | translate }}</option>
+                <option value="Diploma">{{"Diploma" | translate }}</option>
+                <option value="Bachelor">{{"Bachelor" | translate }}</option>
+                <option value="Master ">{{"Master" | translate }}</option>
+                <option value="Doctorate ">{{"Doctorate" | translate }}</option>
+                <option value="Others ">{{"Others" | translate }}</option>
+              </select>
+
+            </div>
+
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="specialization">{{"Specialization" | translate }}</label>
+                <input class="form-control" id="specialization" formControlName="specialization" name="specialization"
+                  placeholder="" type="text"></div>
+            </div>
+
+            <div class="form-group col-md-12 mb-2">
+              <label for="employmentStatus">{{"Employment Status" | translate}} </label>
+
+              <select   formControlName="employmentStatus"
+                class="custom-select  " id="employmentStatus">
+
+                <option value="Student">{{"Student" | translate }}</option>
+                <option value="Employer  ">{{"Employer" | translate }}</option>
+                <option value="Others ">{{"Others" | translate }}</option>
+              </select>
+
+            </div>
+
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="nationality">{{"Nationality" | translate }}</label>
+                <input class="form-control  " id="nationality" formControlName="nationality" name="nationality"
+                  placeholder="" type="text"></div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="city">{{"City" | translate }}</label>
+                <input class="form-control  " id="city" formControlName="city" name="city"
+                  placeholder="" type="text"></div>
+            </div>
+
+
+            <!-- <div class="form-group col-md-12 mb-2">
+              <label for="place_Id">{{"Country" | translate}} </label>
+
+              <select (change)="showArea($event.target.value)" formControlName="place_Id"
+                class="custom-select  " id="place_Id">
+
+                <option *ngFor="let c of city" value="{{c.id}}">{{c.title}}</option>
+              </select>
+
+            </div>
+
+            <div class="form-group col-md-12 mb-2">
+              <label for="city_Id">{{"Area" | translate}} </label>
+
+              <select formControlName="city_Id" id="city_Id" class="custom-select  ">
+
+                <option *ngFor="let c of allArea" value="{{c.id}}">{{c.title}}</option>
+              </select>
+
+            </div> -->
+
+
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="password">{{"Password" | translate }}</label>
+                <input class="form-control   " id="password" formControlName="password" name="password" placeholder=""
+                  type="password"></div>
+            </div>
+
+
+          </div>
+
+
+
+
+
+                <div style="float: right;">
+                    <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2"> {{"Back"|translate}}</button>
+
+                    <button type="submit" class="mt-2 btn btn-primary m-2">  {{"Update"|translate}}</button>
+
+                </div>
+
+
+
+
+        </form>
+
+
+
+    </div>
+</div>
+

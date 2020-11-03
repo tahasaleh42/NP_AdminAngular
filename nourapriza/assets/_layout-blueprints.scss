@@ -1,0 +1,136 @@
+// Bamburgh Angular Admin Dashboard with NGX Bootstrap PRO Layout Blueprints
+
+@import "layout-blueprints/left-sidebar/base";
+@import "layout-blueprints/collapsed-sidebar/base";
+
+
+.tabs-rm-padding > .nav.nav-tabs{
+    width: 80% !important;
+    margin: auto;
+}
+
+.app-sidebar--dark{
+    background: #262262 !important;
+}
+.app-sidebar--dark .app-sidebar--header{
+
+    background: #262262 !important;
+
+}
+
+.app-sidebar--dark .sidebar-navigation ul li.active > a {
+    color: white;
+    background: #FFBF3C;
+}
+
+
+.inimage{
+    width: 350px;
+    height: 250px;
+}
+
+@media (max-width: 668px) {
+
+    .inimage{
+        width: 100px;
+        height: 100px;
+    }
+
+
+
+    }
+    .cardinmob{
+        padding: 30px;
+
+    }
+
+
+
+
+
+
+// .pagination-first .page-item.active .page-link{
+//     background: #FFBF3C;
+//     border-color: #FFBF3C;
+// }
+
+
+.ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #FFBF3C;
+    color: #fff;
+    border-color: #FFBF3C;
+    box-shadow: 0 0.313rem 0.8rem rgba(65, 145, 255, 0.5), 0 0.126rem 0.225rem rgba(65, 145, 255, 0.3);    border-radius: 5px;
+    color: #fefefe;
+    cursor: default;
+}
+
+agm-map {
+    height: 400px;
+  }
+
+  .notifier__notification--warning {
+    background-color: #f4772e;
+    color: #fff;
+}
+
+.notifier__notification--error {
+    background-color: red !important;
+    color: #fff;
+}
+
+// .btn-outline-first {
+//     color: #FFBF3C;
+//     border-color: #FFBF3C;
+// }
+
+// .btn-outline-first:hover {
+//     color: #fff;
+//     background-color: #FFBF3C;
+//     border-color: #FFBF3C;
+// }
+
+// .ngx-pagination .current {
+//     background: #FFBF3C !important;
+
+// }
+
+
+// .btn-primary {
+//     color: #fff;
+//     background-color: #fca311 !important;
+//     border-color: #fca311 !important;
+// }
+
+// .btn-neutral-primary{
+//     color: #fca311 !important;
+
+// }
+
+// .btn-neutral-primary :hover{
+//     background-color: #fca311 !important;
+
+// }
+
+
+.chasing-dots-spinner{
+  position: absolute  !important;
+  left: 880px;
+  top: 500px;
+}
+
+.card-img-top{
+    height: 520px;
+}
+
+@media (max-width: 468px) {
+
+    // .cardinmob{
+    //     padding: 30px; width: 60%; margin: auto;
+    // }
+    .card-img-top{
+        height: 350px !important;
+    }
+
+
+    }

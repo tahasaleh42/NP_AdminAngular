@@ -1,0 +1,312 @@
+{
+  "logo": "Noura Prize",
+  "Copyright": "",
+  "Allrights": "جميع الحقوق محفوظة",
+
+
+  "Site Details": "معلومات الموقع",
+  "home": "الرئيسية",
+  "products": "المنتجات",
+  "productDetails": "التفاصيل العامة ",
+  "product Details": "تفاصيل المنتج ",
+  "product image List": "صور المنتج ",
+
+  "All Users": "جميع المستخدمين",
+  "Total Customers": "عدد المستخدمين",
+  "Total Manger Account": "عدد الادمن",
+  "Total Team Memmber": "عدد فريق العمل",
+  "Total Cities": "عدد المدن ",
+  "Total Message": "عدد الرسائل",
+  "Models Form": "النماذج",
+
+  "Our Models": "النماذج",
+  "News": "ألاخبار",
+  "Slider": "الشريط العلوي",
+  "Show Nomination Form": "عرض استمارة المقدمة من المستخدمين",
+  "Our Partner": "شركاؤنا",
+  "All Organizations": "الجهات",
+
+
+
+  "Full Name": "الاسم رباعي",
+  "Home Phone": "رقم هاتف المنذل",
+  "ID Number": "رقم الهوية الوطنية للشخص الذي قام بالترشيح",
+  "Qualification": "المؤهل العلمي ",
+  "Total Vedios": "عدد الفيديوهات",
+  "Total News": "عدد الاخبار",
+
+  "Total Slider Items": "عدد صور الشريط العلوي",
+  "Total Models": "عدد النماذج",
+  "Total Organizations": "عدد الجهات المرشحة",
+  "Site Social Media": "مواقع التواصل الاجتماعي",
+  "Update Site info": "تحدث المعلومات الاساسية",
+
+
+  "cV_in_Arabic": "السيرة الذاتية باللغة العربية",
+  "cV_in_English": "السيرة الذاتية باللغة الإنجليزية",
+  "national_ID_card": " صورة من  بطاقة الهوية الوطنية",
+  "intellectual_Property_for_the_submitted_work": "الملكية الفكرية للعمل المقدم",
+  "not_first_degree_relative_of_anyofthe_Prize_committee_members": "نفي القرابة من الدرجة الأولى لأي من أعضاء اللجنة",
+  "thes_ubmitted_work_has_not_won_any_previous_awards": " نفي فوز العمل بأي جوائز سابقة",
+  "post_winning_commitment": " التزامات الفائزة ما بعد الجائزة",
+  "signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners": "صورة موقعة من إقرار التفويض والمسؤولية  في حال وجود شركاء",
+  "list_of_published_works_or_programs_and_initiatives_accomplished": "قائمة بالأعمال المنشورة أو البرامج والمبادرات التي أنجزتها",
+  "an_electronic_copy_of_the_Novel": "نسخة الكترونية من الرواية المرشحة للجائزة",
+  "other_documents": "مستندات أخرى الداعمة للترشيح ",
+
+
+  "Nomination Form": "استمارات التسجيل",
+  "Show Nomination Form For Organizations": "عرض الاستمارات المقدمة من الجهات",
+
+
+  "Primary": "ابتدائي",
+  "Intermediate": "متوسط  ",
+  "Secondary": "ثانوي  ",
+  "Diploma": "دبلوم  ",
+  "Bachelor": "جامعي  ",
+  "Master": "ماجستير",
+  "Doctorate": "دكتوراه",
+  "Others": "أخرى",
+
+  "Specialization": "التخصص",
+  "Employment Status": " الحالة الوظيفية",
+  "Student": "طالب",
+  "Employer": "موظف",
+
+  "nominating_Organization": "جهة الترشيح",
+  "name_of_Organization": "اسم الجهة",
+  "name_of_nominating_person": "اسم الشخص الذي قام بالترشيح",
+  "email_of_nominating_person": "البريد الالكتروني للقائم بالترشيح",
+  "phone_of_nominating_person": "رقم جوال القائم بالترشيح",
+  "relation_with_the_candidate": "علاقته بالمرشحين",
+  "Government sector": "حكومية",
+  "Private sector": "خاصة",
+
+  "Login": "تسجيل الدخول",
+
+  "Noura Prize Dashboard": "جائزة الاميرة نورا للتميز النسائي",
+  "Login To Your Dashboard": "قم بالدخول للوحة التحكم",
+
+
+
+  "Manger Account": "الادمن",
+  "All Customers": "المستخدمين",
+  "Team Memmbers": "فريق العمل",
+  "feedback": "الأسئلة والتقييمات",
+  "pages": "الصفحات",
+  "payment": "المدفوعات الالكترونية",
+  "URL": "الرابط",
+  "Our Details": "من نحن",
+  "All Cart transactions": "جميع الطلبات",
+  "Our Categories": "التصنيفات",
+
+
+
+  "All Stores": "جميع المتاجر",
+  "Waiting Stores": "المتاجر المنتظرة ",
+  "Accepted Stores": "المتاجر المقبولة",
+  "Blocked Stores": "المتاجر المحظورة",
+
+  "Cities": "المدن",
+  "Other Details": "معلومات اخري",
+  "Terms And Conditions": "الاحكام والشروط",
+  "Contact Us Message": "رسائل الموقع",
+  "celebrity_marketing": "التسويق مع المشاهير",
+  "MangerAccount": "الادمن",
+  "Roles": "الصلاحيات",
+  "Categories": "التصنيفات",
+  "Name In Arabic": "ألاسم بالعربي",
+  "Title in AR": "ألاسم بالعربي",
+
+  "Name In English": "ألاسم بالانجليزية",
+  "Title in En": "ألاسم بالانجليزية",
+
+  "description In Arabic": "الوصف بالعربي",
+  "description In English": "الوصف بالانجليزية",
+  "status": "الحالة",
+  "Avalible": "متاح",
+  "Un Avalible": "غير متاح",
+  "in total": "اجمالي",
+  "Update Category": "تعديل التصنيف",
+  "Update Customer": "  تعديل العميل",
+  "Update Currency": "  تعديل العملة",
+  "Send Notification": "أرسال  اشعار",
+
+
+  "Media": "ألوسائط",
+  "Our Services": "الخدمات",
+  "Our Work": "المناسبات",
+  "Sessions": "اعمالنا",
+  "Our Vedios": "الفديوهات",
+  "Portfolio": "ابرز الاعمال",
+
+
+
+  "is paid": " هل تم الدفع",
+  "Logo": " الشعار",
+  "Restaurant Details": " تفاصيل المتاجر",
+  "Description": " الوصف",
+
+  "Send": " أرسال",
+  "Title": " العنوان",
+  "message": " الرساله",
+
+  "Password": "كلمة السر",
+  "Create": "انشاء",
+  "Update": "تعديل",
+  "Area In This City": "عرض المناطق هنا",
+  "Restaurant Images": "صور المطعم",
+  "Restaurant Admins": "طاقم المطعم",
+  "Prices": "الاسعار",
+  "Phone": "رقم الهاتف",
+  "Rate": "التقييم",
+
+
+
+
+
+  "ID": "الرقم",
+  "User ID": "رقم المستخدم",
+
+  "Name": "الاسم",
+  "Yes": "نعم",
+  "No": "لأا",
+
+  "Quantity": "الكمية",
+  "Offer Amount": "الخصم",
+
+  "address": "العنوان",
+  "Countries": "الدول",
+  "Country": "الدولة",
+  "Nationality": "الجنسية",
+  "City": "المدينة",
+
+
+  "Phone 1": "رقم الهاتف الاول",
+  "Phone 2": "رقم الهاتف الثاني",
+  "Phone 3": "رقم الهاتف الثالث",
+  "Email": "الاميل",
+  "Actions": "عمليات",
+  "Image": "الصورة",
+  "Latitude": "خط العرض",
+  "Longitude": "خط الطول",
+  "Name in AR": "الاسم بالعربية",
+  "Name in En": "الاسم  بالإنجليزية",
+  "Description in AR": "الوصف  بالعربية",
+  "Description in En": "الوصف بالإنجليزية",
+  "Code": "الرمز",
+  "Amount": "الكمية",
+  "About Us List": "من نحن",
+  "About Us": "من نحن",
+  "Amount ": "الخصم",
+
+  "Amount type": "نوع  الخصم",
+  "End_date": "تاريخ الانتهاء",
+  "Add New": "أضافة جديد",
+  "Add New Coupon": "أضافة جديد",
+  "Add New category": "أضافة جديد",
+  "Add New Account": "أضافة جديد",
+  "Add New Order": "أضافة جديد",
+  "Add New color": "أضافة جديد",
+  "Add New Size": "أضافة جديد",
+  "Add New image": "أضافة جديد",
+  "Add New City": "أضافة جديد",
+  "Add New Area": "أضافة جديد",
+  "Add New Message": "أضافة جديد",
+  "Add New Category": "أضافة جديد",
+  "Add New Item": "أضافة جديد",
+
+
+
+  "Add New Currency": "أضافة جديد",
+  "Add New Product": "أضافة جديد",
+  "Add New Customer": "أضافة جديد",
+  "Add New Permissions": "أضافة جديد",
+  "Add New Image": "أضافة جديد",
+  "Add New Term": "أضافة جديد",
+
+
+  "Slider Images": "الصور الاساسية",
+  "Colors": " الألوان ",
+  "Sizes": "المقاسات ",
+  "Currency": " العملات ",
+  "Images": " الصور ",
+  "End date": "تاريخ الانتهاء",
+  "PERCENTAGE": " نسبة مؤية",
+  "NUMBER": " رقم ",
+  "Messages": "الرسائل",
+  "Contact Us": "اتصل بنا",
+  "Update Profile": "تعديل المعلومات",
+  "Shop Social Media": "مواقع التواصل لدي",
+  "Update Shop Profile": "تحديث معلومات المتجر",
+
+
+
+  "Address In English": " العنوان بالعربي ",
+  "Address In Arabic": " العنوان بالانجليزية ",
+  "facebook": " الفيس بوك ",
+  "youtube": "  اليوتيوب ",
+  "twitter": " التويتر ",
+  "instagram": " الانستجرام ",
+  "snap": " سناب شات ",
+
+
+  "View Products": "عرض المنتجات",
+  "General Colors": " الألوان العامة",
+  "General Sizes": "المقاسات العامة",
+  "General Currency": " العملات العامة",
+  "color List": "الالوان",
+  "Sizes List": "المقاسات",
+  "Currency List": "العملات",
+  "Notification": "الاشعارات",
+  "Update Product": "تعديل المنتج",
+  "Update Size": "تعديل ألمقاس",
+  "Update Coupon": "تعديل الكوبون",
+
+  "color code": "كود اللون",
+  "color": "اللون",
+  "shipping price": "ضريبة التوصيل",
+  "payment Way": "طريقة الدفع",
+  "total price": "السعر الكلي",
+  "Price": "السعر ",
+  "has Offer": "لديه عرض؟",
+  "First Name": "الاسم الاول",
+  "Last Name": "الاسم الاخير",
+  "Change status": "تغيير الحالة",
+
+
+  "Menu Category": "اقسام قائمة الطعام",
+  "Menu Items": "الاصناف",
+
+
+
+  "Store_Details": "معلومات المتجر",
+
+  "Chat": "الرسائل",
+  "Manger Account Permissions": "صلاحيات الادمن",
+
+  "Back": "عودة",
+  "Order products": "المنتجات داخل الطلب",
+  "Show Menu Items ": "عرض عناصر القائمة",
+
+
+
+
+  "settings": "الاعدادات",
+  "settings_store": "إعدادات المتجر",
+  "design": "تصميم المتجر",
+  "Profile": "البروفيل",
+  "city": "المدينه",
+  "Area": "المنطقه",
+  "Areas": "المناطق",
+
+
+
+  "Arabic": "Arabic",
+  "English": "English"
+
+
+
+
+
+}

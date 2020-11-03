@@ -1,0 +1,338 @@
+<div class="card card-box mb-4">
+  <div class="px-4 py-3 d-block d-md-flex justify-content-between align-items-center text-center text-md-left">
+    <div class="d-flex flex-md-row flex-column align-items-center">
+      <div class="font-size-lg font-weight-bold" style="cursor: pointer;" (click)="showPage('list')">
+        {{"All Organizations" | translate }}
+      </div>
+      <div class="mx-3 d-none d-md-block">
+        <div class="divider-v position-relative"></div>
+        <div class="divider-v position-relative"></div>
+      </div>
+      <span class="text-black-50 font-size-md">
+        {{taskArrlength}} {{"in total" | translate }}
+      </span>
+      <div class="search-wrapper search-wrapper--grow my-3 my-md-0 ml-0 ml-md-4">
+        <span class="icon-wrapper text-black">
+          <fa-icon [icon]="['fas', 'search']"></fa-icon>
+        </span>
+        <input [(ngModel)]='listFilter' [ngModelOptions]="{standalone: true}" class="form-control"
+          placeholder="Search Organizations..." type="search">
+      </div>
+    </div>
+    <div class="d-block d-md-flex align-items-center">
+      <button (click)="showPage('add')" class="btn btn-neutral-primary btn-sm font-weight-bold">
+        {{"Add New" | translate }}
+
+      </button>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div *ngIf="currentPage === 'list'">
+  <div class="card card-box mb-5">
+
+    <div class="table-responsive">
+      <table class="table table-hover text-nowrap mb-0">
+        <thead>
+          <tr>
+            <th class="bg-white text-left">{{"ID" | translate }}</th>
+            <th class="bg-white text-center"> {{"nominating_Organization" | translate }}</th>
+            <th class="bg-white text-center"> {{"name_of_Organization" | translate }}</th>
+            <th class="bg-white text-center"> {{"ID Number" | translate }}</th>
+            <th class="bg-white text-center"> {{"name_of_nominating_person" | translate }}</th>
+            <th class="bg-white text-center"> {{"email_of_nominating_person" | translate }}</th>
+            <th class="bg-white text-center"> {{"phone_of_nominating_person" | translate }}</th>
+            <th class="bg-white text-center">{{"Actions" | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of filteredAllDiscussion | paginate: { itemsPerPage: 8, currentPage: p }">
+            <td class="font-weight-bold">
+              #{{s.id}}
+            </td>
+
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.nominating_Organization}}
+
+
+            </td>
+            <td class="text-center">
+              {{s.name_of_Organization}}
+
+            </td>
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.identificationNumber}}
+
+            </td>
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.name_of_nominating_person}}
+
+            </td>
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.email_of_nominating_person}}
+
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.phone_of_nominating_person}}
+
+            </td>
+
+            <td class="text-center">
+
+              <a [routerLink]="['/dash/orgUsers',s.id]" class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="Organization Users">
+                <span class="pe-7s-users font-size-lg"></span>
+
+              </a>
+
+              <a (click)="updatetask('edit',s.id)" class="btn btn-neutral-primary btn-sm  m-1" tooltip="Edit">
+                <span class="pe-7s-note font-size-lg"></span>
+
+              </a>
+              <a (click)="deleteTask(s.id)" class="btn btn-danger btn-sm m-1" tooltip="Delete">
+                <span class="pe-7s-trash font-size-lg "></span>
+
+              </a>
+
+
+            </td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer py-3 d-flex justify-content-center">
+      <pagination-controls previousLabel="Previous" nextLabel="Next" class="pagination-icons pagination-first"
+        (pageChange)="p = $event"></pagination-controls>
+
+
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="currentPage === 'add'">
+
+  <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+    {{"Add New Account" | translate }}
+  </div><br>
+  <div class="card cardinmob">
+    <form [formGroup]="Userform" (submit)="onSubmit(Userform.value)">
+
+
+
+
+      <div class="form-row">
+
+
+
+        <div class="form-group col-md-12 mb-2">
+          <label for="nominating_Organization">{{"nominating_Organization" | translate}} </label>
+
+          <select formControlName="nominating_Organization"
+            class="custom-select" id="nominating_Organization">
+
+            <option value="{{'Government sector' | translate }}">{{"Government sector" | translate }}</option>
+            <option value="{{'Private sector' | translate }}">{{"Private sector" | translate }}</option>
+            <option value="{{'Others' | translate }}">{{"Others" | translate }}</option>
+          </select>
+
+        </div>
+
+
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group"><label for="name_of_Organization">{{"name_of_Organization" | translate }}</label>
+            <input class="form-control  " id="name_of_Organization" formControlName="name_of_Organization" name="name_of_Organization"
+            placeholder=""
+              type="text"></div>
+        </div>
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group"><label
+              for="identificationNumber">{{"ID Number" | translate }}</label>
+            <input class="form-control  " id="identificationNumber" formControlName="identificationNumber"
+              name="identificationNumber" placeholder="" type="number"></div>
+        </div>
+
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group"><label for="name_of_nominating_person">{{"name_of_nominating_person" | translate }}</label>
+            <input class="form-control  " id="name_of_nominating_person" formControlName="name_of_nominating_person" name="name_of_nominating_person"
+            placeholder=""
+              type="text"></div>
+        </div>
+
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group"><label for="email_of_nominating_person">{{"email_of_nominating_person" | translate }}</label>
+            <input class="form-control  " id="email_of_nominating_person" formControlName="email_of_nominating_person" name="email_of_nominating_person"
+            placeholder=""
+              type="text"></div>
+         </div>
+
+         <div class="col-md-12">
+          <div class="position-relative form-group"><label for="phone_of_nominating_person">{{"phone_of_nominating_person" | translate }}</label>
+            <input class="form-control  " id="phone_of_nominating_person" formControlName="phone_of_nominating_person" name="phone_of_nominating_person"
+            placeholder=""
+              type="text"></div>
+         </div>
+
+         <div class="col-md-12">
+          <div class="position-relative form-group"><label for="relation_with_the_candidate">{{"relation_with_the_candidate" | translate }}</label>
+            <input class="form-control  " id="relation_with_the_candidate" formControlName="relation_with_the_candidate" name="relation_with_the_candidate"
+            placeholder=""
+              type="text"></div>
+         </div>
+
+
+         <div class="col-md-12">
+          <div class="position-relative form-group"><label for="password">{{"Password" | translate }}</label>
+            <input class="form-control   " id="password" formControlName="password" name="password" placeholder=""
+              type="password"></div>
+         </div>
+
+
+
+      </div>
+
+
+
+      <div style="float: right;">
+        <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2">{{"Back" | translate }}</button>
+
+        <button  type="submit" class="mt-2 btn btn-primary m-2"> {{"Create" | translate }}
+        </button>
+
+      </div>
+
+
+
+
+    </form>
+
+
+
+  </div>
+
+
+</div>
+
+<div *ngIf="currentPage === 'edit'">
+  <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+    {{"Update Customer"|translate}}
+  </div><br>
+  <div class="card cardinmob">
+    <form [formGroup]="Userform" (submit)="onUpdate(Userform.value)">
+
+
+
+      <div class="form-row">
+
+
+
+        <div class="form-group col-md-12 mb-2">
+          <label for="nominating_Organization">{{"nominating_Organization" | translate}} </label>
+
+          <select formControlName="nominating_Organization"
+            class="custom-select" id="nominating_Organization">
+
+            <option value="{{'Government sector' | translate }}">{{"Government sector" | translate }}</option>
+            <option value="{{'Private sector' | translate }}">{{"Private sector" | translate }}</option>
+            <option value="{{'Others' | translate }}">{{"Others" | translate }}</option>
+          </select>
+
+        </div>
+
+
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group"><label for="name_of_Organization">{{"name_of_Organization" | translate }}</label>
+            <input class="form-control  " id="name_of_Organization" formControlName="name_of_Organization" name="name_of_Organization"
+            placeholder=""
+              type="text"></div>
+        </div>
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group"><label
+              for="identificationNumber">{{"ID Number" | translate }}</label>
+            <input class="form-control  " id="identificationNumber" formControlName="identificationNumber"
+              name="identificationNumber" placeholder="" type="number"></div>
+        </div>
+
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group"><label for="name_of_nominating_person">{{"name_of_nominating_person" | translate }}</label>
+            <input class="form-control  " id="name_of_nominating_person" formControlName="name_of_nominating_person" name="name_of_nominating_person"
+            placeholder=""
+              type="text"></div>
+        </div>
+
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group"><label for="email_of_nominating_person">{{"email_of_nominating_person" | translate }}</label>
+            <input class="form-control  " id="email_of_nominating_person" formControlName="email_of_nominating_person" name="email_of_nominating_person"
+            placeholder=""
+              type="text"></div>
+         </div>
+
+         <div class="col-md-12">
+          <div class="position-relative form-group"><label for="phone_of_nominating_person">{{"phone_of_nominating_person" | translate }}</label>
+            <input class="form-control  " id="phone_of_nominating_person" formControlName="phone_of_nominating_person" name="phone_of_nominating_person"
+            placeholder=""
+              type="text"></div>
+         </div>
+
+         <div class="col-md-12">
+          <div class="position-relative form-group"><label for="relation_with_the_candidate">{{"relation_with_the_candidate" | translate }}</label>
+            <input class="form-control  " id="relation_with_the_candidate" formControlName="relation_with_the_candidate" name="relation_with_the_candidate"
+            placeholder=""
+              type="text"></div>
+         </div>
+
+
+         <div class="col-md-12">
+          <div class="position-relative form-group"><label for="password">{{"Password" | translate }}</label>
+            <input class="form-control   " id="password" formControlName="password" name="password" placeholder=""
+              type="password"></div>
+         </div>
+
+
+
+      </div>
+
+
+
+      <div style="float: right;">
+        <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2"> {{"Back"|translate}}</button>
+
+        <button type="submit" class="mt-2 btn btn-primary m-2"> {{"Update"|translate}}</button>
+
+      </div>
+
+
+
+
+    </form>
+
+
+
+  </div>
+</div>

@@ -1,0 +1,249 @@
+<div class="card card-box mb-4">
+  <div class="px-4 py-3 d-block d-md-flex justify-content-between align-items-center text-center text-md-left">
+    <div class="d-flex flex-md-row flex-column align-items-center">
+
+
+      <div class="font-size-lg font-weight-bold" style="cursor: pointer;" (click)="showPage('list')">
+        {{ "Our Models" | translate }}
+      </div>
+      <div class="mx-3 d-none d-md-block">
+        <div class="divider-v position-relative"></div>
+        <div class="divider-v position-relative"></div>
+      </div>
+      <span class="text-black-50 font-size-md">
+        {{taskArrlength}} {{"in total" | translate }}
+      </span>
+      <div class="search-wrapper search-wrapper--grow my-3 my-md-0 ml-0 ml-md-4">
+        <span class="icon-wrapper text-black">
+          <fa-icon [icon]="['fas', 'search']"></fa-icon>
+        </span>
+        <input [(ngModel)]='listFilter' [ngModelOptions]="{standalone: true}" class="form-control"
+          placeholder="Search Models..." type="search">
+      </div>
+
+
+    </div>
+    <div class="d-block d-md-flex align-items-center">
+      <button (click)="showPage('add')" class="btn btn-neutral-primary btn-sm font-weight-bold">
+        {{ "Add New" | translate }}
+      </button>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div *ngIf="currentPage === 'list'">
+
+  <div class="row">
+    <div class="col-xl-4 col-lg-6"
+      *ngFor="let s of filteredAllDiscussion  | paginate: { itemsPerPage: 6, currentPage: p }">
+      <div class="card mb-5">
+        <div class="card-header" style="float: right; text-align: right;">
+
+
+
+          <a (click)="updatetask('edit',s.id)" class="btn btn-neutral-primary btn-sm  m-1" tooltip="Edit">
+            <span class="pe-7s-note font-size-lg"></span>
+
+          </a>
+
+          <!-- <a (click)="deleteTask(s.id)"  class="btn btn-danger btn-sm m-1" tooltip="Delete">
+                    <span   class="pe-7s-trash font-size-lg"></span>
+
+                </a> -->
+
+        </div>
+        <div class="card-img-wrapper">
+
+
+          <img src="{{imageHost+s.image}}" style="height: 320px;" class="card-img-top rounded" alt="...">
+        </div>
+        <div class="font-size-lg text-center m-2" style="cursor: pointer;" (click)="showPage('list')">
+          {{ s.title }}
+        </div>
+        <hr style="width: 80%; margin: auto;">
+
+        <div class="font-size-lg text-center m-2" style="cursor: pointer;">
+
+          <button style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+            [routerLink]="['/dash/nominationform',s.id]" class="btn btn-raised btn-warning">
+            {{ "Show Nomination Form" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
+          </button>
+
+          <button style="text-align: center; width: 100%; margin: auto;" type="button"
+            [routerLink]="['/dash/nominationFormOrg',s.id]" class="btn btn-raised btn-warning ">
+            {{ "Show Nomination Form For Organizations" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
+          </button>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+  <div class="d-flex justify-content-center">
+
+    <pagination-controls previousLabel="Previous" nextLabel="Next" class="pagination-icons pagination-first"
+      (pageChange)="p = $event"></pagination-controls>
+
+  </div>
+
+
+
+
+</div>
+
+<div *ngIf="currentPage === 'add'">
+
+
+  <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+    {{ "Add New" | translate }}
+  </div><br>
+  <div class="card cardinmob">
+
+    <form [formGroup]="Userform" (submit)="onSubmit(Userform.value)">
+
+
+
+      <div class="form-row">
+
+        <div class="col-lg-12 col-md-12">
+
+
+          <div class="text-center" style="text-align: center; width: 100% ;">
+            <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
+          </div>
+          <br>
+
+          <fieldset class="form-group">
+
+            <div class="custom-file  mx-auto d-block">
+              <input type="file" accept="image/*" #fileUploader (change)="showPreview($event)" class="custom-file-input"
+                id="inputGroupFile01">
+              <label class="custom-file-label" for="inputGroupFile01">Choose
+                Main Image</label>
+            </div>
+
+
+
+          </fieldset>
+        </div>
+
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group"><label for="title">{{"Title" | translate }}</label>
+            <input class="form-control " id="title" formControlName="title" name="title" placeholder="" type="text">
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="position-relative form-group">
+            <label for="desc">{{"Description" | translate}}</label>
+            <textarea rows="5" class="form-control" id="desc" formControlName="desc" name="desc" placeholder=""
+              type="text"> </textarea></div>
+        </div>
+      </div>
+
+
+
+      <div style="float: right;">
+        <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2">{{"Back" | translate }}</button>
+
+        <button [disabled]="!isSubmitted" type="submit" class="mt-2 btn btn-primary m-2"> {{"Create" | translate }}
+        </button>
+
+      </div>
+
+
+
+
+    </form>
+
+
+
+  </div>
+
+
+</div>
+
+
+<div *ngIf="currentPage === 'edit'">
+
+
+  <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+    {{ "Update" | translate }}
+  </div><br>
+  <div class="card cardinmob">
+
+    <form [formGroup]="Userform" (submit)="onUpdate(Userform.value)">
+
+
+
+      <div class="form-row">
+
+        <div class="col-lg-12 col-md-12">
+
+
+          <div class="text-center" style="text-align: center; width: 100% ;">
+            <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
+          </div>
+          <br>
+
+          <fieldset class="form-group">
+
+            <div class="custom-file  mx-auto d-block">
+              <input type="file" accept="image/*" #fileUploader (change)="showPreview($event)" class="custom-file-input"
+                id="inputGroupFile01">
+              <label class="custom-file-label" for="inputGroupFile01">Choose
+                Main Image</label>
+            </div>
+
+
+
+          </fieldset>
+        </div>
+
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group"><label for="title">{{"Title" | translate }}</label>
+            <input class="form-control " id="title" formControlName="title" name="title" placeholder="" type="text">
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="position-relative form-group">
+            <label for="desc">{{"Description" | translate}}</label>
+            <textarea rows="5" class="form-control" id="desc" formControlName="desc" name="desc" placeholder=""
+              type="text"> </textarea></div>
+        </div>
+      </div>
+
+
+
+      <div style="float: right;">
+        <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2">{{"Back" | translate }}</button>
+
+        <button type="submit" class="mt-2 btn btn-primary m-2"> {{"Update" | translate }} </button>
+
+      </div>
+
+
+
+
+    </form>
+
+
+
+  </div>
+
+
+</div>

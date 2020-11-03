@@ -1,0 +1,40 @@
+{
+  "logo": "Noura Prize",
+  "Copyright": "Copyright © 2020",
+  "Allrights": "All rights reserved",
+
+  "store": "Store",
+  "home": "Home",
+  "products": "Products",
+  "productDetails": "General Details",
+  "Store_Details": "Store Details",
+
+
+  "orders": "Orders",
+  "customers": "Customers",
+  "reports": "Reports",
+  "feedback": "Feedback",
+  "pages": "Pages",
+  "payment": "Payment",
+  "MangerAccount": "Manger Account",
+  "Roles": "Permissions",
+
+  "Marketing": "Marketing",
+  "coupons": "Coupons",
+  "campaign": "Campaign",
+  "abandoned_carts": "Abandoned Carts",
+  "specialoffer": "specialoffer",
+  "celebrity_marketing": "Celebrity Marketing",
+
+
+  "settings": "Settings",
+  "settings_store": "Settings store",
+  "design": "Design",
+
+  "Arabic": "العربية",
+  "English": "English"
+
+
+
+
+}

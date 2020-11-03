@@ -1,0 +1,31 @@
+<div [ngClass]="{
+  'app-footer--shadow' : globals.footerShadow,
+  'app-footer--opacity-bg' : globals.footerTransparentBg
+}" class="app-footer text-black-50">
+
+
+    <!-- <div class="app-footer--first">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard-analytics">Analytics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/forms-wizard">Wizards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard-crm-manager">CRM Manager</a>
+            </li>
+        </ul>
+    </div> -->
+
+    <div class="app-footer text-center">
+
+
+         <p class="copyright text-center" style="width: 50%; margin: auto; font-size: 15px; ">
+
+
+            {{ "Copyright" | translate }} <a style="box-shadow: 0 0.313rem 0.8rem rgba(60, 68, 177, 0.5), 0 0.126rem 0.225rem rgba(60, 68, 177, 0.3);" id="pixinventLink" style="color: #FFBF3C;" target="_blank" href="http://nourahprize.com"> {{ "logo" | translate }} </a>, {{ "Allrights" | translate }}
+        </p>
+
+    </div>
+</div>

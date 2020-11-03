@@ -1,0 +1,147 @@
+<div  class="card card-box mb-4">
+    <div class="px-4 py-3 d-block d-md-flex justify-content-between align-items-center text-center text-md-left">
+        <div class="d-flex flex-md-row flex-column align-items-center">
+            <div class="font-size-lg font-weight-bold" style="cursor: pointer;" (click)="showPage('list')">
+                   {{ "Contact Us Message" | translate }} 
+            </div>
+            <div class="mx-3 d-none d-md-block">
+                <div class="divider-v position-relative"></div>
+                <div class="divider-v position-relative"></div>
+            </div>
+            <span class="text-black-50 font-size-md">
+                 {{taskArrlength}} {{"in total" | translate }}
+            </span>
+           
+            
+        </div>
+        <div class="d-block d-md-flex align-items-center">
+            <button (click)="showPage('add')" class="btn btn-neutral-primary btn-sm font-weight-bold">
+                  {{ "Add New Message" | translate }}
+            </button> 
+          
+        </div>
+    </div>
+</div>
+
+
+
+
+<div *ngIf="currentPage === 'list'">
+
+    <div class="row">
+        <div class="col-xl-6 col-lg-6" *ngFor="let s of filteredAllDiscussion  | paginate: { itemsPerPage: 6, currentPage: p }">
+            <div class="card mb-5">
+                <div class="card-header" style="float: right; text-align: right;">
+                  
+                  
+                    
+                    <a (click)="deleteTask(s.id)"  class="btn btn-danger btn-sm m-1" tooltip="Delete">
+                        <span   class="pe-7s-trash font-size-xl"></span>
+
+                    </a>
+                    
+                </div>
+
+                <div class="card-body ">
+                    <div class="font-size-lg text-center" >
+                        {{ s.title }} 
+                    </div>
+                    <hr style="width: 70%;">
+                    <div class="font-size-sm text-center" style="cursor: pointer;" (click)="showPage('list')">
+                        {{ s.mess }} 
+                    </div>
+                    <hr style="width: 70%;">
+                    <div class="font-size-sm text-left" style="cursor: pointer;" (click)="showPage('list')">
+                         From :{{ s.email }} 
+                         <br>
+                         phone :{{ s.phone }} 
+
+                    </div>
+                </div>
+              
+                
+            </div>
+
+           
+        </div>
+      
+        
+    </div>
+    <div class="d-flex justify-content-center">
+
+        <pagination-controls previousLabel="Previous" nextLabel="Next"
+         class="pagination-icons pagination-first" (pageChange)="p = $event"></pagination-controls>
+
+    </div>
+          
+    
+    
+
+</div>
+
+<div *ngIf="currentPage === 'add'">
+
+   
+    <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+      {{ "Add New Message" | translate }}
+    </div><br>
+    <div class="card cardinmob" >
+      
+        <form [formGroup]="Userform" (submit)="onSubmit(Userform.value)">
+
+
+            
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="position-relative form-group"><label for="email">{{"Email" | translate }}</label>
+                        <input class="form-control " id="email"  formControlName="email"
+                        name="email" placeholder="" type="email"></div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="position-relative form-group"><label for="phone">{{"Phone" | translate }}</label>
+                        <input class="form-control " id="phone"  formControlName="phone"
+                        name="phone" placeholder="" type="number"></div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="position-relative form-group"><label for="title">{{"Title" | translate }}</label>
+                        <input class="form-control " id="title"  formControlName="title"
+                        name="title" placeholder="" type="text"></div>
+                    </div>
+
+
+      
+                      <div class="col-md-12">
+                        <div class="position-relative form-group"><label for="mess">{{"message" | translate }}</label>
+                        <textarea rows="5" class="form-control " id="mess"  formControlName="mess"
+                        name="mess" placeholder="" type="text"> </textarea></div>
+                    </div>
+                </div>
+             
+                
+    
+                <div style="float: right;">
+                    <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2">{{"Back" | translate }}</button>
+    
+                    <button type="submit" class="mt-2 btn btn-primary m-2"> {{"Create" | translate }} </button>
+        
+                </div>
+
+
+                
+           
+        </form>
+    
+       
+        
+    </div>
+   
+  
+</div>
+
+
+
+
+
+
