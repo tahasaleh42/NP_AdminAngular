@@ -10,7 +10,8 @@
   "productDetails": "التفاصيل العامة ",
   "product Details": "تفاصيل المنتج ",
   "product image List": "صور المنتج ",
-
+  "Select":"اختار",
+  "Select User":"اختار المستخدم",
   "All Users": "جميع المستخدمين",
   "Total Customers": "عدد المستخدمين",
   "Total Manger Account": "عدد الادمن",
@@ -18,7 +19,7 @@
   "Total Cities": "عدد المدن ",
   "Total Message": "عدد الرسائل",
   "Models Form": "النماذج",
-
+  "Organizational Nomination Form":"استماره تسجيل الجهات",
   "Our Models": "النماذج",
   "News": "ألاخبار",
   "Slider": "الشريط العلوي",
@@ -53,6 +54,19 @@
   "list_of_published_works_or_programs_and_initiatives_accomplished": "قائمة بالأعمال المنشورة أو البرامج والمبادرات التي أنجزتها",
   "an_electronic_copy_of_the_Novel": "نسخة الكترونية من الرواية المرشحة للجائزة",
   "other_documents": "مستندات أخرى الداعمة للترشيح ",
+  "fullName":"الاسم الكامل",
+  "nationality":"الجنسية",
+  "qualification":"المؤهل",
+  "specialization":"التخصص",
+  "employmentStatus":"حالة الموظف",
+  "identificationNumber":"رقم الهوية",
+  "homephone":"هاتف المنزل",
+  "email":"الايميل",
+  "phone":"رقم الهاتف",
+  "statue":"الحالة",
+  "organization_Id":"رمز المؤسسة",
+  "summary":"تلخيص",
+  "image":"الصورة",
 
 
   "Nomination Form": "استمارات التسجيل",

@@ -32,8 +32,36 @@
   "design": "Design",
 
   "Arabic": "العربية",
-  "English": "English"
+  "English": "English",
 
+
+
+
+  
+  "cV_in_Arabic": "CV In Arabic",
+  "cV_in_English": "CV In English",
+  "national_ID_card": "National ID Card",
+  "intellectual_Property_for_the_submitted_work": "Intellectual Property For The Submitted Work",
+  "not_first_degree_relative_of_anyofthe_Prize_committee_members": "Not First Degree Relative Of Anyofthe Prize Committee Members",
+  "thes_ubmitted_work_has_not_won_any_previous_awards": "Thes Ubmitted Work Has Not Won Any Previous Awards",
+  "post_winning_commitment": "Post Winning Commitment",
+  "signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners": "Signed Copy Of The Delegation And Responsibility Consent Of Any Partners",
+  "list_of_published_works_or_programs_and_initiatives_accomplished": "List Of Published Works Or Programs And Initiatives Accomplished",
+  "an_electronic_copy_of_the_Novel": "An Alectronic Copy Of The Novel",
+  "other_documents": "Other Documents",
+  "fullName":"Full Name",
+  "nationality":"Nationality",
+  "qualification":"Qualification",
+  "specialization":"Specialization",
+  "employmentStatus":"Employment Status",
+  "identificationNumber":"Identification Number",
+  "homephone":"Home Phone",
+  "email":"Smail",
+  "phone":"Shone",
+  "statue":"Statue",
+  "organization_Id":"Organization Id",
+  "summary":"Summary",
+  "image":"Image"
 
 
 

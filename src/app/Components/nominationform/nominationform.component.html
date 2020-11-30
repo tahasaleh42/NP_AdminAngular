@@ -27,10 +27,10 @@
       </div>
     </div>
     <div class="d-block d-md-flex align-items-center">
-      <!-- <button (click)="showPage('add')" class="btn btn-neutral-primary btn-sm font-weight-bold">
+         <button (click)="showPage('add')" class="btn btn-neutral-primary btn-sm font-weight-bold">
         {{"Add New" | translate }}
 
-      </button> -->
+      </button>   
 
     </div>
   </div>
@@ -47,11 +47,36 @@
         <thead>
           <tr>
             <th class="bg-white text-left">{{"ID" | translate }}</th>
+            <th class="bg-white text-center"> {{"fullName" | translate }}</th>
+            <th class="bg-white text-center"> {{"nationality" | translate }}</th>
+            <th class="bg-white text-center"> {{"city" | translate }}</th>
+            <th class="bg-white text-center"> {{"qualification" | translate }}</th>
+            <th class="bg-white text-center"> {{"specialization" | translate }}</th>
+            <th class="bg-white text-center"> {{"employmentStatus" | translate }}</th>
+            <th class="bg-white text-center"> {{"identificationNumber" | translate }}</th>
+            <th class="bg-white text-center"> {{"homephone" | translate }}</th>
+            <th class="bg-white text-center"> {{"email" | translate }}</th>
+            <th class="bg-white text-center"> {{"phone" | translate }}</th>
+           <!--  <th class="bg-white text-center"> {{"statue" | translate }}</th>
+            <th class="bg-white text-center"> {{"organization_Id" | translate }}</th>
+            <th class="bg-white text-center"> {{"summary" | translate }}</th> -->
+            <th class="bg-white text-center"> {{"national_ID_card" | translate }}</th>
             <th class="bg-white text-center"> {{"Image" | translate }}</th>
-            <th class="bg-white text-center"> {{"Name" | translate }}</th>
-            <th class="bg-white text-center"> {{"Email" | translate }}</th>
-            <th class="bg-white text-center"> {{"Phone" | translate }}</th>
-            <th class="bg-white text-center"> {{"ID Number" | translate }}</th>
+
+            <th class="bg-white text-center"> {{"cV_in_Arabic" | translate }}</th>
+            <th class="bg-white text-center"> {{"cV_in_English" | translate }}</th>
+            <th class="bg-white text-center"> {{"intellectual_Property_for_the_submitted_work" | translate }}</th>
+            <th class="bg-white text-center">
+              {{"not_first_degree_relative_of_anyofthe_Prize_committee_members" | translate }}</th>
+            <th class="bg-white text-center"> {{"thes_ubmitted_work_has_not_won_any_previous_awards" | translate }}</th>
+            <th class="bg-white text-center">
+              {{"signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners" | translate }}</th>
+            <th class="bg-white text-center">
+              {{"list_of_published_works_or_programs_and_initiatives_accomplished" | translate }}</th>
+            <th class="bg-white text-center"> {{"an_electronic_copy_of_the_Novel" | translate }}</th>
+            <th class="bg-white text-center"> {{"other_documents" | translate }}</th>
+            <th class="bg-white text-center"> {{"post_winning_commitment" | translate }}</th>
+
             <th class="bg-white text-center">{{"Actions" | translate }}</th>
           </tr>
         </thead>
@@ -60,7 +85,7 @@
             <td class="font-weight-bold">
               #{{s.id}}
             </td>
-            <td>
+            <!--         <td>
               <div class="d-flex align-items-center">
                 <div class="avatar-icon-wrapper avatar-icon-sm mr-2">
                   <div class="avatar-icon"><img alt="..." src="{{imageHost+s.image}}" /></div>
@@ -68,19 +93,171 @@
                 <div>
                 </div>
               </div>
+            </td> -->
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.fullName}}
             </td>
             <td class="text-center" style="font-family: 'Cairo', sans-serif;">
-              {{s.Name}}
+              {{s.nationality}}
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.city}}
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.qualification}}
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.specialization}}
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.employmentStatus}}
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.identificationNumber}}
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.homephone}}
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.email}}
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.phone}}
+            </td>
+           <!--  <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.statue}}
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.organization_Id}}
+            </td>
 
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              {{s.summary}}
+            </td> -->
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+
+
+
+              <a href="{{imageHost+s.national_ID_card}}" target="_black" class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'national_ID_card' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
+
+            </td>
+
+            <td class="text-center">
+
+              <a href="{{imageHost+s.image}}" target="_black" class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'image' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
+
+
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              <a href="{{imageHost+s.cV_in_Arabic}}" target="_black" class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'cV_in_Arabic' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
+            </td>
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              <a href="{{imageHost+s.cV_in_English}}" target="_black" class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'cV_in_English' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
 
             </td>
             <td class="text-center">
-              {{s.email}}
+              <a href="{{imageHost+s.intellectual_Property_for_the_submitted_work}}" target="_black"
+                class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'intellectual_Property_for_the_submitted_work' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
 
             </td>
 
             <td class="text-center" style="font-family: 'Cairo', sans-serif;">
-              {{s.phone}}
+              <a href="{{imageHost+s.not_first_degree_relative_of_anyofthe_Prize_committee_members}}" target="_black"
+                class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'not_first_degree_relative_of_anyofthe_Prize_committee_members' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
+
+            </td>
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              <a href="{{imageHost+s.thes_ubmitted_work_has_not_won_any_previous_awards}}" target="_black"
+                class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'thes_ubmitted_work_has_not_won_any_previous_awards' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
+
+            </td>
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              <a href="{{imageHost+s.signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners}}"
+                target="_black" class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
+
+            </td>
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              <a href="{{imageHost+s.list_of_published_works_or_programs_and_initiatives_accomplished}}" target="_black"
+                class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'list_of_published_works_or_programs_and_initiatives_accomplished' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
+
+            </td>
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              <a href="{{imageHost+s.an_electronic_copy_of_the_Novel}}" target="_black"
+                class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'an_electronic_copy_of_the_Novel' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
+
+            </td>
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              <a href="{{imageHost+s.other_documents}}" target="_black" class="btn btn-neutral-primary btn-sm  m-1"
+                tooltip="{{'other_documents' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
+
+            </td>
+
+            <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+              <a href="{{imageHost+s.post_winning_commitment}}" target="_black"
+                class="btn btn-neutral-primary btn-sm  m-1" tooltip="{{'post_winning_commitment' | translate }}">
+                <span class="pe-7s-id font-size-lg"></span>
+
+              </a>
+
 
             </td>
 
@@ -125,14 +302,301 @@
     <form [formGroup]="Userform" (submit)="onSubmit(Userform.value)">
 
 
-
       <div class="form-row">
+
+
 
         <div class="col-lg-12 col-md-12">
 
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc13" class="inimage2" (click)="fileUploader.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file"  accept="file/*" #fileUploader (change)="showPreview13($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01"> {{'image'|translate }}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc14" class="inimage2" (click)="fileUploader14.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader14 (change)="showPreview14($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'post_winning_commitment'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            
+
+
+          </div>
+
+          <div class="row">
+          <!--   <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc" class="inimage2" (click)="fileUploader.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file"  accept="file/*" #fileUploader (change)="showPreview($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01"> {{'organization_Id'|translate}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div> -->
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc10" class="inimage2" (click)="fileUploader10.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader10 (change)="showPreview10($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'list_of_published_works_or_programs_and_initiatives_accomplished'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc11" class="inimage2" (click)="fileUploader11.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader11 (change)="showPreview11($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'an_electronic_copy_of_the_Novel'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc3" class="inimage2" (click)="fileUploader3.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader3 (change)="showPreview3($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'cV_in_Arabic'|translate}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc4" class="inimage2" (click)="fileUploader4.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader4 (change)="showPreview4($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'cV_in_English'|translate}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc5" class="inimage2" (click)="fileUploader5.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader5 (change)="showPreview5($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'national_ID_card'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc6" class="inimage2" (click)="fileUploader6.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader6 (change)="showPreview6($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'intellectual_Property_for_the_submitted_work'|translate |slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc7" class="inimage2" (click)="fileUploader7.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader7 (change)="showPreview7($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'not_first_degree_relative_of_anyofthe_Prize_committee_members'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc8" class="inimage2" (click)="fileUploader8.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader8 (change)="showPreview8($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'thes_ubmitted_work_has_not_won_any_previous_awards'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc9" class="inimage2" (click)="fileUploader9.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader9 (change)="showPreview9($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+          </div>
+
+
+
+          <div class="row justify-content-center">
+
+<!--             <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc11" class="inimage2" (click)="fileUploader11.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader11 (change)="showPreview11($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'an_electronic_copy_of_the_Novel'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div> -->
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc12" class="inimage2" (click)="fileUploader12.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader12 (change)="showPreview12($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'other_documents'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+        <!--  <div class="col-lg-12 col-md-12">
+
 
           <div class="text-center" style="text-align: center; width: 100% ;">
-            <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
+            <img [src]="imgSrc" class="inimage2" (click)="fileUploader.click()">
           </div>
           <br>
 
@@ -148,9 +612,20 @@
 
 
           </fieldset>
+        </div> -->
+
+
+
+        <div class="form-group col-md-12 mb-2">
+          <label for="qualification">{{"Select User" | translate}} </label>
+
+          <select formControlName="user_Id" (change)="fillForm($event.target.value)" class="custom-select" id="qualification">
+            <option  value=""   selected>{{'Select'|translate}}</option>
+            <option *ngFor = "let x of users" value="{{x.id}}">{{x.fullName}}</option>
+            
+          </select>
+
         </div>
-
-
 
 
         <div class="col-md-12">
@@ -189,8 +664,7 @@
         <div class="form-group col-md-12 mb-2">
           <label for="qualification">{{"Qualification" | translate}} </label>
 
-          <select formControlName="qualification"
-            class="custom-select" id="qualification">
+          <select formControlName="qualification" class="custom-select" id="qualification">
 
             <option value="Primary">{{"Primary" | translate }}</option>
             <option value="Intermediate ">{{"Intermediate" | translate }}</option>
@@ -206,7 +680,8 @@
 
 
         <div class="col-md-12">
-          <div class="position-relative form-group"><label for="specialization">{{"Specialization" | translate }}</label>
+          <div class="position-relative form-group"><label
+              for="specialization">{{"Specialization" | translate }}</label>
             <input class="form-control" id="specialization" formControlName="specialization" name="specialization"
               placeholder="" type="text"></div>
         </div>
@@ -214,12 +689,11 @@
         <div class="form-group col-md-12 mb-2">
           <label for="employmentStatus">{{"Employment Status" | translate}} </label>
 
-          <select   formControlName="employmentStatus"
-            class="custom-select  " id="employmentStatus">
+          <select formControlName="employmentStatus" class="custom-select  " id="employmentStatus">
 
             <option value="Student">{{"Student" | translate }}</option>
-            <option value="Employer  ">{{"Employer" | translate }}</option>
-            <option value="Others ">{{"Others" | translate }}</option>
+            <option value="Employer">{{"Employer" | translate }}</option>
+            <option value="Others">{{"Others" | translate }}</option>
           </select>
 
         </div>
@@ -233,8 +707,7 @@
 
         <div class="col-md-12">
           <div class="position-relative form-group"><label for="city">{{"City" | translate }}</label>
-            <input class="form-control  " id="city" formControlName="city" name="city"
-              placeholder="" type="text"></div>
+            <input class="form-control  " id="city" formControlName="city" name="city" placeholder="" type="text"></div>
         </div>
 
 
@@ -261,171 +734,13 @@
 
 
 
-        <div class="col-md-12">
+      <!--   <div class="col-md-12">
           <div class="position-relative form-group"><label for="password">{{"Password" | translate }}</label>
             <input class="form-control   " id="password" formControlName="password" name="password" placeholder=""
               type="password"></div>
         </div>
+ -->
 
-
-
-        <hr style="width: 70%; margin: auto;">
-        <br>
-
-        <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;" for="inputGroupFile01">   {{"cV_in_Arabic"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
-
-         <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;"for="inputGroupFile01">   {{"cV_in_English"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
-
-         <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;"for="inputGroupFile01">   {{"national_ID_card"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
-
-         <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;"for="inputGroupFile01">   {{"intellectual_Property_for_the_submitted_work"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
-
-         <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;"for="inputGroupFile01">   {{"not_first_degree_relative_of_anyofthe_Prize_committee_members"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
-
-
-         <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;"for="inputGroupFile01">   {{"thes_ubmitted_work_has_not_won_any_previous_awards"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
-
-         <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;"for="inputGroupFile01">   {{"signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
-
-         <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;"for="inputGroupFile01">   {{"list_of_published_works_or_programs_and_initiatives_accomplished"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
-
-         <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;"for="inputGroupFile01">   {{"an_electronic_copy_of_the_Novel"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
-
-         <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;"for="inputGroupFile01">   {{"post_winning_commitment"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
-
-         <div class="col-lg-12 col-md-12">
-          <fieldset class="form-group">
-
-              <div class="custom-file  mx-auto d-block">
-                  <input type="file" #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                      id="inputGroupFile01">
-                  <label class="custom-file-label"  style="text-align: center;"for="inputGroupFile01">   {{"other_documents"| translate }} </label>
-              </div>
-
-
-
-          </fieldset>
-         </div>
       </div>
 
 
@@ -459,11 +774,320 @@
 
       <div class="form-row">
 
+
+
         <div class="col-lg-12 col-md-12">
+
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc13" class="inimage2" (click)="fileUploader.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file"  accept="file/*" #fileUploader (change)="showPreview13($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01"> {{'image'|translate }}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc14" class="inimage2" (click)="fileUploader14.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader14 (change)="showPreview14($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'post_winning_commitment'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            
+
+
+          </div>
+
+          <div class="row">
+            <!-- <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc" class="inimage2" (click)="fileUploader.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file"  accept="file/*" #fileUploader (change)="showPreview($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01"> {{'organization_Id'|translate}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div> -->
+           <!--  <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc2" class="inimage2" (click)="fileUploader2.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader2 (change)="showPreview2($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'summary'|translate}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div> -->
+
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc10" class="inimage2" (click)="fileUploader10.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader10 (change)="showPreview10($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'list_of_published_works_or_programs_and_initiatives_accomplished'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc11" class="inimage2" (click)="fileUploader11.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader11 (change)="showPreview11($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'an_electronic_copy_of_the_Novel'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc3" class="inimage2" (click)="fileUploader3.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader3 (change)="showPreview3($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'cV_in_Arabic'|translate}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc4" class="inimage2" (click)="fileUploader4.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader4 (change)="showPreview4($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'cV_in_English'|translate}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc5" class="inimage2" (click)="fileUploader5.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader5 (change)="showPreview5($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'national_ID_card'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc6" class="inimage2" (click)="fileUploader6.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader6 (change)="showPreview6($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'intellectual_Property_for_the_submitted_work'|translate |slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc7" class="inimage2" (click)="fileUploader7.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader7 (change)="showPreview7($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'not_first_degree_relative_of_anyofthe_Prize_committee_members'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc8" class="inimage2" (click)="fileUploader8.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader8 (change)="showPreview8($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'thes_ubmitted_work_has_not_won_any_previous_awards'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc9" class="inimage2" (click)="fileUploader9.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader9 (change)="showPreview9($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+          </div>
+
+
+
+          <div class="row">
+
+           <!--  <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc11" class="inimage2" (click)="fileUploader11.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader11 (change)="showPreview11($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'an_electronic_copy_of_the_Novel'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div> -->
+            <div class="col-lg-4">
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc12" class="inimage2" (click)="fileUploader12.click()">
+              </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="file/*" #fileUploader12 (change)="showPreview12($event)"
+                    class="custom-file-input" id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">{{'other_documents'|translate|slice:0:30}}</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+        <!--  <div class="col-lg-12 col-md-12">
 
 
           <div class="text-center" style="text-align: center; width: 100% ;">
-            <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
+            <img [src]="imgSrc" class="inimage2" (click)="fileUploader.click()">
           </div>
           <br>
 
@@ -479,7 +1103,7 @@
 
 
           </fieldset>
-        </div>
+        </div> -->
 
 
 
@@ -520,8 +1144,7 @@
         <div class="form-group col-md-12 mb-2">
           <label for="qualification">{{"Qualification" | translate}} </label>
 
-          <select formControlName="qualification"
-            class="custom-select" id="qualification">
+          <select formControlName="qualification" class="custom-select" id="qualification">
 
             <option value="Primary">{{"Primary" | translate }}</option>
             <option value="Intermediate ">{{"Intermediate" | translate }}</option>
@@ -537,7 +1160,8 @@
 
 
         <div class="col-md-12">
-          <div class="position-relative form-group"><label for="specialization">{{"Specialization" | translate }}</label>
+          <div class="position-relative form-group"><label
+              for="specialization">{{"Specialization" | translate }}</label>
             <input class="form-control" id="specialization" formControlName="specialization" name="specialization"
               placeholder="" type="text"></div>
         </div>
@@ -545,12 +1169,11 @@
         <div class="form-group col-md-12 mb-2">
           <label for="employmentStatus">{{"Employment Status" | translate}} </label>
 
-          <select   formControlName="employmentStatus"
-            class="custom-select  " id="employmentStatus">
+          <select formControlName="employmentStatus" class="custom-select  " id="employmentStatus">
 
             <option value="Student">{{"Student" | translate }}</option>
-            <option value="Employer  ">{{"Employer" | translate }}</option>
-            <option value="Others ">{{"Others" | translate }}</option>
+            <option value="Employer">{{"Employer" | translate }}</option>
+            <option value="Others">{{"Others" | translate }}</option>
           </select>
 
         </div>
@@ -564,8 +1187,7 @@
 
         <div class="col-md-12">
           <div class="position-relative form-group"><label for="city">{{"City" | translate }}</label>
-            <input class="form-control  " id="city" formControlName="city" name="city"
-              placeholder="" type="text"></div>
+            <input class="form-control  " id="city" formControlName="city" name="city" placeholder="" type="text"></div>
         </div>
 
 
@@ -592,12 +1214,12 @@
 
 
 
-        <div class="col-md-12">
+      <!--   <div class="col-md-12">
           <div class="position-relative form-group"><label for="password">{{"Password" | translate }}</label>
             <input class="form-control   " id="password" formControlName="password" name="password" placeholder=""
               type="password"></div>
         </div>
-
+ -->
 
       </div>
 
