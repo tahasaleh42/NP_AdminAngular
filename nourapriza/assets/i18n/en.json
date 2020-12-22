@@ -9,7 +9,34 @@
   "productDetails": "General Details",
   "Store_Details": "Store Details",
 
+  "An electronic copy of the Novel Send 7 copies":"An electronic copy of the Novel Send 7 copies to the award secretariat mail address shown on its website ",
+  "a_copy_of_the_commercial_register":"A copy of the commercial register",
+  "a_copy_of_the_facility_evaluation_from_the_Ministry_of_Human_Resources_and_Social_Development_website":"A copy of the facility evaluation from the Ministry of Human Resources and Social Development website.",
+  "a_copy_of_the_tax_declaration_from_the_General_Authority_for_Zakat_and_Tax":"A copy of the tax declaration from the General Authority for Zakat and Tax.",
+  "proof_of_funding_round":"Proof of funding round (if any)",
+  "financial_statement_for_last_2_years":"Financial statement for last 2 years",
+    
 
+
+
+  "Additional Information":"Additional Information",
+  "brief_about_yourself":"Brief about yourself",
+  "brief_About_TheFacility":"Brief about the facility",
+  "facility_Email":"Facility E-mail",
+  "facility_Accounts_OnSocialMedia": "Facility accounts on social media",
+  "your_position_in_thefacility":"Your position in the facility",
+  "total_number_of_fulltime_employees":"Total number of full-time employees",
+  "number_of_Saudi_employees":"Number of Saudi employees",
+  "number_of_female_employees":"Number of female employees",
+  "number_of_branches":"Number of branches(if any)",
+  "total_sales_for_2019_in_Saudi_Riyal":"Total sales for 2019 in Saudi Riyal",
+  "have_you_ever_received_money_of_an_investment_round":"Have you ever received money of an investment round?",
+  "the_name_of_the_facility":"The name of the facility",
+  "the_amount":"The amount",
+  "do_you_have_partners_in_the_facility":"Do you have partners in the facility?",
+  "the_number_of_partners_in_the_facility":"The number of partners in the facility",
+  "names_of_the_partners":"Names of the partners",
+  
   "orders": "Orders",
   "customers": "Customers",
   "reports": "Reports",
@@ -59,6 +86,24 @@
   "email":"Smail",
   "phone":"Shone",
   "statue":"Statue",
+  "digital_copy_of_high_quality_for_the_nominated_work":"Digital copy of high quality for the nominated work",
+  "copy_of_the_first_page_of_the_nominated_work":"Copy of the first page of the nominated work,showing international standard book number (ISBN), or periodicals (ISSN), or a digital ID number for research papers published in peer-reviewed journals (DOI).With sending an electronic link to the published research work",
+  "a_summary_English_Arabic":"A summary  about the nominated work in English and Arabic (not to exceed 300 words)*  Note that this summary can be used for publication in the award's publications and the media, in case of winning  the prize.",
+  "name_of_the_School":"Name of the School / University",
+  "current_job":"Current Job",
+  "place_of_work":  "Place of work",
+  "current_place_of_residence":"Current place of residence",
+   
+  "research_leadership":"Research leadership",
+  "research_Excellence":"Research Excellence",
+  "the_originality_of_scientific_research":"The originality of scientific research",
+  "research_Collaboration":"Research Collaboration",
+  "supervising_and_training_students_and_trainees":"Supervising and training students and trainees.",
+  "teaching_or_medical_clinics":"Teaching or medical clinics.",
+  "active_participation_in_national_and_international_committees_and_scientific_associations":"Active participation in national and international committees and scientific associations",
+  "community_service":"Community service",
+
+
   "organization_Id":"Organization Id",
   "summary":"Summary",
   "image":"Image"

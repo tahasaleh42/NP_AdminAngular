@@ -143,12 +143,13 @@ export class NominationFormOrgComponent implements OnInit {
        let resources: any[] = res["data"];
     
       
+      
        this.taskArr =resources;
       
        this.taskArrlength =resources.length;
 
        let filterdData = this.taskArr.filter(function(number) {
-        return number.organization_Id != 0 && number.organization_Id > 0;
+        return number.organization_Id != 0 && number.organization_Id > 0&&number.user_Id != 0 && number.user_Id > 0;
       });
       this.filteredAllDiscussion =filterdData;
       this.taskArr =filterdData;

@@ -29,8 +29,19 @@ import { CityComponent } from './Components/main-place/city/city.component';
 import { OrganizationsComponent } from './Components/organizations/organizations.component';
 import { OrgUsersComponent } from './Components/organizations/org-users/org-users.component';
 import { NominationFormOrgComponent } from './Components/nomination-form-org/nomination-form-org.component';
-
-
+import { SingleSocialFormComponent } from './Components/single-social-form/single-social-form.component';
+import { SingleNaturalScienceComponent } from './Components/single-natural-science/single-natural-science.component';
+import { SingleMedicinFormComponent } from './Components/single-medicin-form/single-medicin-form.component';
+import { SingleEqiteFormComponent } from './Components/single-eqite-form/single-eqite-form.component';
+import { SingleEconomicFormComponent } from './Components/single-economic-form/single-economic-form.component';
+import { SingleArtsFormComponent } from './Components/single-arts-form/single-arts-form.component';
+import { OrgArtsFormComponent } from './Components/org-arts-form/org-arts-form.component';
+import { OrgEconomicFormComponent } from './Components/org-economic-form/org-economic-form.component';
+import { OrgEqiteFormComponent } from './Components/org-eqite-form/org-eqite-form.component';
+import { OrgNaturalScienceComponent } from './Components/org-natural-science/org-natural-science.component';
+import { OrgSocialFormComponent } from './Components/org-social-form/org-social-form.component';
+   
+ 
 
 
 const routes: Routes = [
@@ -67,12 +78,24 @@ const routes: Routes = [
           { path: 'nominationformUser/:id', component: NominationformUserComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
 
           { path: 'nominationFormOrg/:id', component: NominationFormOrgComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
+          { path: 'SingleSocial', component: SingleSocialFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
 
+          { path: 'SingleNaturalScience', component: SingleNaturalScienceComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
 
+          { path: 'SingleMedicinForm', component: SingleMedicinFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
+          { path: 'SingleEqiteForm', component: SingleEqiteFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
+          { path: 'SingleEconomicForm', component: SingleEconomicFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
+          { path: 'SingleArtsForm', component: SingleArtsFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
+          { path: 'OrgArtsForm', component: OrgArtsFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
+          { path: 'OrgEconomicForm', component: OrgEconomicFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
+          { path: 'OrgEqiteForm', component: OrgEqiteFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
+          { path: 'OrgNaturalScience', component: OrgNaturalScienceComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
+          { path: 'OrgSocialForm', component: OrgSocialFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
 
+          
     ]
-
-  },
+    
+  }, 
 
   { path: '', component: LoginComponent ,pathMatch: 'full' },
 

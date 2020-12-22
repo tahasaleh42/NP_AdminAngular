@@ -95,47 +95,60 @@
       <form [formGroup]="Userform" (submit)="onSubmit(Userform.value)">
 
 
+        <div class="form-row">
 
-              <div class="form-row">
-
-                  <div class="col-lg-12 col-md-12">
-
-
-                      <div class="text-center" style="text-align: center; width: 100% ;">
-                        <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
-                      </div>
-                      <br>
-
-                      <fieldset class="form-group">
-
-                        <div class="custom-file  mx-auto d-block">
-                          <input type="file" accept="image/*"
-                           #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                            id="inputGroupFile01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose
-                            Main Image</label>
-                        </div>
+          <div class="col-lg-12 col-md-12">
 
 
-
-                      </fieldset>
-                    </div>
-
-
-
-                    <div class="col-md-12">
-                      <div class="position-relative form-group"><label for="title">{{"Title" | translate }}</label>
-                      <input class="form-control " id="title"  formControlName="title"
-                      name="title" placeholder="" type="text"></div>
-                  </div>
-
-                  <div class="col-md-12">
-                      <div class="position-relative form-group">
-                          <label for="desc">{{"Description" | translate}}</label>
-                          <textarea rows="5" class="form-control" id="desc" formControlName="desc" name="desc"
-                              placeholder="" type="text"> </textarea></div>
-                  </div>
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
               </div>
+              <br>
+
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="image/*"
+                   #fileUploader (change)="showPreview($event)" class="custom-file-input"
+                    id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose
+                    Main Image</label>
+                </div>
+
+
+
+              </fieldset>
+            </div>
+
+
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="title">{{"Title" | translate }}</label>
+              <input class="form-control " id="title"  formControlName="title"
+              name="title" placeholder="" type="text"></div>
+          </div>
+
+          <div class="col-md-12">
+              <div class="position-relative form-group">
+                  <label for="desc">{{"Description" | translate}}</label>
+                  <textarea rows="5" class="form-control" id="desc" formControlName="desc" name="desc"
+                      placeholder="" type="text"> </textarea></div>
+          </div>
+
+
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label for="enTitle">{{"English Title" | translate }}</label>
+            <input class="form-control " id="enTitle"  formControlName="enTitle"
+            name="title" placeholder="" type="text"></div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="position-relative form-group">
+                <label for="endesc">{{"English Description" | translate}}</label>
+                <textarea rows="5" class="form-control" id="endesc" formControlName="endesc" name="endesc"
+                    placeholder="" type="text"> </textarea></div>
+        </div>
+      </div>
 
 
 
@@ -171,47 +184,60 @@
 
 
 
-          <div class="form-row">
+        <div class="form-row">
 
-              <div class="col-lg-12 col-md-12">
-
-
-                  <div class="text-center" style="text-align: center; width: 100% ;">
-                    <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
-                  </div>
-                  <br>
-
-                  <fieldset class="form-group">
-
-                    <div class="custom-file  mx-auto d-block">
-                      <input type="file" accept="image/*"
-                       #fileUploader (change)="showPreview($event)" class="custom-file-input"
-                        id="inputGroupFile01">
-                      <label class="custom-file-label" for="inputGroupFile01">Choose
-                        Main Image</label>
-                    </div>
+          <div class="col-lg-12 col-md-12">
 
 
+              <div class="text-center" style="text-align: center; width: 100% ;">
+                <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()">
+              </div>
+              <br>
 
-                  </fieldset>
+              <fieldset class="form-group">
+
+                <div class="custom-file  mx-auto d-block">
+                  <input type="file" accept="image/*"
+                   #fileUploader (change)="showPreview($event)" class="custom-file-input"
+                    id="inputGroupFile01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose
+                    Main Image</label>
                 </div>
 
 
 
-                <div class="col-md-12">
-                  <div class="position-relative form-group"><label for="title">{{"Title" | translate }}</label>
-                  <input class="form-control " id="title"  formControlName="title"
-                  name="title" placeholder="" type="text"></div>
-              </div>
+              </fieldset>
+            </div>
 
-              <div class="col-md-12">
-                  <div class="position-relative form-group">
-                      <label for="desc">{{"Description" | translate}}</label>
-                      <textarea rows="5" class="form-control" id="desc" formControlName="desc" name="desc"
-                          placeholder="" type="text"> </textarea></div>
-              </div>
+
+
+            <div class="col-md-12">
+              <div class="position-relative form-group"><label for="title">{{"Title" | translate }}</label>
+              <input class="form-control " id="title"  formControlName="title"
+              name="title" placeholder="" type="text"></div>
           </div>
 
+          <div class="col-md-12">
+              <div class="position-relative form-group">
+                  <label for="desc">{{"Description" | translate}}</label>
+                  <textarea rows="5" class="form-control" id="desc" formControlName="desc" name="desc"
+                      placeholder="" type="text"> </textarea></div>
+          </div>
+
+
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label for="enTitle">{{"English Title" | translate }}</label>
+            <input class="form-control " id="enTitle"  formControlName="enTitle"
+            name="title" placeholder="" type="text"></div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="position-relative form-group">
+                <label for="endesc">{{"English Description" | translate}}</label>
+                <textarea rows="5" class="form-control" id="endesc" formControlName="endesc" name="endesc"
+                    placeholder="" type="text"> </textarea></div>
+        </div>
+      </div>
 
 
               <div style="float: right;">

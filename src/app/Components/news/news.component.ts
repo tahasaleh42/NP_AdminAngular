@@ -51,7 +51,9 @@ export class NewsComponent implements OnInit {
   Userform = new FormGroup({
 
     title: new FormControl('', Validators.required),
+    enTitle: new FormControl('', Validators.required),
     desc: new FormControl('', Validators.required),
+    endesc: new FormControl('', Validators.required),
     image: new FormControl('',),
     statue: new FormControl('',),
 
@@ -82,6 +84,8 @@ export class NewsComponent implements OnInit {
 
   onSubmit(formValue){
 
+    console.log(formValue);
+    
     if (this.Userform.valid) {
       this.progressRef.start();
       formValue["image"]=this.imgPath;
@@ -189,6 +193,8 @@ export class NewsComponent implements OnInit {
         this.Userform.setValue({
           image: this.taskArrD['image'],
           title: this.taskArrD['title'],
+          endesc: this.taskArrD['endesc'],
+          enTitle: this.taskArrD['enTitle'],
           statue: this.taskArrD['statue'],
           desc: this.taskArrD['desc'],
 

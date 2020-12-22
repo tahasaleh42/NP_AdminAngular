@@ -52,6 +52,8 @@ export class OurServicesComponent implements OnInit {
 
     title: new FormControl('', Validators.required),
     desc: new FormControl('', Validators.required),
+    enTitle: new FormControl('', Validators.required),
+    endesc: new FormControl('', Validators.required),
     image: new FormControl('',),
     statue: new FormControl('',),
 
@@ -192,6 +194,8 @@ export class OurServicesComponent implements OnInit {
           statue: this.taskArrD['statue'],
           desc: this.taskArrD['desc'],
 
+          enTitle: this.taskArrD['enTitle'],
+          endesc: this.taskArrD['endesc'],
         });
         this.imgPath=this.taskArrD['image']
         this.imgSrc= this.imageHost + this.taskArrD['image']

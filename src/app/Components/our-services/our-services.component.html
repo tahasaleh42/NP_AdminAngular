@@ -23,12 +23,12 @@
 
 
     </div>
-    <div class="d-block d-md-flex align-items-center">
+    <!-- <div class="d-block d-md-flex align-items-center">
       <button (click)="showPage('add')" class="btn btn-neutral-primary btn-sm font-weight-bold">
         {{ "Add New" | translate }}
       </button>
 
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -68,15 +68,71 @@
 
         <div class="font-size-lg text-center m-2" style="cursor: pointer;">
 
-          <button style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
-            [routerLink]="['/dash/nominationform',s.id]" class="btn btn-raised btn-warning">
+          <button *ngIf="s.id == 34" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+            [routerLink]="['/dash/SingleEqiteForm' ]" class="btn btn-raised btn-warning">
             {{ "Show Nomination Form" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
           </button>
+          
+          <button *ngIf="s.id == 4" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+          [routerLink]="['/dash/SingleSocial']" class="btn btn-raised btn-warning">
+          {{ "Show Nomination Form" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
+        </button>
+        <button *ngIf="s.id == 3" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+        [routerLink]="['/dash/SingleNaturalScience' ]" class="btn btn-raised btn-warning">
+        {{ "Show Nomination Form" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
+      </button>
+      <button *ngIf="s.id == 5" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+      [routerLink]="['/dash/SingleEconomicForm' ]" class="btn btn-raised btn-warning">
+      {{ "Show Nomination Form" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
+    </button>
+    <button *ngIf="s.id == 6" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+    [routerLink]="['/dash/SingleMedicinForm' ]" class="btn btn-raised btn-warning">
+    {{ "Show Nomination Form" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
+  </button>
+  <button *ngIf="s.id == 7" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+  [routerLink]="['/dash/SingleArtsForm' ]" class="btn btn-raised btn-warning">
+  {{ "Show Nomination Form" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
+</button>
 
-          <button style="text-align: center; width: 100%; margin: auto;" type="button"
+
+
+
+
+
+
+
+
+
+<button *ngIf="s.id == 34" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+[routerLink]="['/dash/OrgEqiteForm' ]" class="btn btn-raised btn-warning">
+{{ "Show Nomination Form For Organizations" | translate }}   <span class="pe-7s-note2 font-size-lg"></span>
+</button>
+
+<button *ngIf="s.id == 4" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+[routerLink]="['/dash/OrgSocialForm']" class="btn btn-raised btn-warning">
+{{ "Show Nomination Form For Organizations" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
+</button>
+<button *ngIf="s.id == 3" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+[routerLink]="['/dash/OrgNaturalScience' ]" class="btn btn-raised btn-warning">
+{{ "Show Nomination Form For Organizations" | translate }}   <span class="pe-7s-note2 font-size-lg"></span>
+</button>
+<button *ngIf="s.id == 5" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+[routerLink]="['/dash/OrgEconomicForm' ]" class="btn btn-raised btn-warning">
+{{ "Show Nomination Form For Organizations" | translate }}   <span class="pe-7s-note2 font-size-lg"></span>
+</button>
+<button *ngIf="s.id == 6" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+[routerLink]="['/dash/SingleMedicinForm' ]" class="btn btn-raised btn-warning">
+{{ "Show Nomination Form For Organizations" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
+</button>
+<button *ngIf="s.id == 7" style="text-align: center; width: 100%; margin: auto; margin-bottom: 2px;" type="button"
+[routerLink]="['/dash/OrgArtsForm' ]" class="btn btn-raised btn-warning">
+{{ "Show Nomination Form For Organizations" | translate }}   <span class="pe-7s-note2 font-size-lg"></span>
+</button>
+
+         <!--  <button style="text-align: center; width: 100%; margin: auto;" type="button"
             [routerLink]="['/dash/nominationFormOrg',s.id]" class="btn btn-raised btn-warning ">
             {{ "Show Nomination Form For Organizations" | translate }}  <span class="pe-7s-note2 font-size-lg"></span>
-          </button>
+          </button> -->
         </div>
 
 
@@ -145,9 +201,23 @@
         </div>
 
         <div class="col-md-12">
+          <div class="position-relative form-group"><label for="enTitle">{{"English Title" | translate }}</label>
+            <input class="form-control " id="enTitle" formControlName="enTitle" name="enTitle" placeholder="" type="text">
+          </div>
+        </div>
+
+        <div class="col-md-12">
           <div class="position-relative form-group">
             <label for="desc">{{"Description" | translate}}</label>
             <textarea rows="5" class="form-control" id="desc" formControlName="desc" name="desc" placeholder=""
+              type="text"> </textarea></div>
+        </div>
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group">
+            <label for="endesc">{{"English Description" | translate}}</label>
+            <textarea rows="5" class="form-control" id="endesc" formControlName="endesc" name="endesc" placeholder=""
               type="text"> </textarea></div>
         </div>
       </div>
@@ -187,6 +257,7 @@
 
 
 
+  
       <div class="form-row">
 
         <div class="col-lg-12 col-md-12">
@@ -220,9 +291,23 @@
         </div>
 
         <div class="col-md-12">
+          <div class="position-relative form-group"><label for="enTitle">{{"English Title" | translate }}</label>
+            <input class="form-control " id="enTitle" formControlName="enTitle" name="enTitle" placeholder="" type="text">
+          </div>
+        </div>
+
+        <div class="col-md-12">
           <div class="position-relative form-group">
             <label for="desc">{{"Description" | translate}}</label>
             <textarea rows="5" class="form-control" id="desc" formControlName="desc" name="desc" placeholder=""
+              type="text"> </textarea></div>
+        </div>
+
+
+        <div class="col-md-12">
+          <div class="position-relative form-group">
+            <label for="endesc">{{"English Description" | translate}}</label>
+            <textarea rows="5" class="form-control" id="endesc" formControlName="endesc" name="endesc" placeholder=""
               type="text"> </textarea></div>
         </div>
       </div>

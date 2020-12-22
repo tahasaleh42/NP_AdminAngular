@@ -1,0 +1,845 @@
+<div class="card card-box mb-4">
+    <div class="px-4 py-3 d-block d-md-flex justify-content-between align-items-center text-center text-md-left">
+      <div class="d-flex flex-md-row flex-column align-items-center">
+        <a href="javascript:history.back()" class="btn btn-neutral-primary btn-sm font-weight-bold m-2" style="background-color:#000 ;
+         border-color: #000; color: white; margin-right: 50px !important;">
+          <span class="btn-wrapper--icon">
+            <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+          </span>
+          {{"Back" | translate }}
+        </a>
+        <div class="font-size-lg font-weight-bold" style="cursor: pointer;" (click)="showPage('list')">
+          {{"Nomination Form" | translate }}
+        </div>
+        <div class="mx-3 d-none d-md-block">
+          <div class="divider-v position-relative"></div>
+          <div class="divider-v position-relative"></div>
+        </div>
+        <span class="text-black-50 font-size-md">
+          {{taskArrlength}} {{"in total" | translate }}
+        </span>
+        <div class="search-wrapper search-wrapper--grow my-3 my-md-0 ml-0 ml-md-4">
+          <span class="icon-wrapper text-black">
+            <fa-icon [icon]="['fas', 'search']"></fa-icon>
+          </span>
+          <input [(ngModel)]='listFilter' [ngModelOptions]="{standalone: true}" class="form-control"
+            placeholder="Search Form..." type="search">
+        </div>
+      </div>
+
+      <div class="d-block d-md-flex align-items-center">
+        <button (click)="export()" class="btn btn-neutral-primary btn-sm font-weight-bold">
+       {{"Export Data" | translate }}
+
+     </button>   
+
+   </div>
+
+      <div class="d-block d-md-flex align-items-center">
+           <button (click)="showPage('add')" class="btn btn-neutral-primary btn-sm font-weight-bold">
+          {{"Add New" | translate }}
+  
+        </button>   
+  
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  <div *ngIf="currentPage === 'list'">
+    <div class="card card-box mb-5">
+  
+      <div class="table-responsive">
+        <table class="table table-hover text-nowrap mb-0">
+          <thead>
+            <tr>
+              <th class="bg-white text-left">{{"ID" | translate }}</th>
+              <th class="bg-white text-center"> {{"fullName" | translate }}</th>
+              <th class="bg-white text-center"> {{"nationality" | translate }}</th>
+              <th class="bg-white text-center"> {{"city" | translate }}</th>
+              <th class="bg-white text-center"> {{"qualification" | translate }}</th>
+              <th class="bg-white text-center"> {{"specialization" | translate }}</th>
+              <th class="bg-white text-center"> {{"employmentStatus" | translate }}</th>
+              <th class="bg-white text-center"> {{"identificationNumber" | translate }}</th>
+              <th class="bg-white text-center"> {{"homephone" | translate }}</th>
+              <th class="bg-white text-center"> {{"email" | translate }}</th>
+              <th class="bg-white text-center"> {{"phone" | translate }}</th>
+              <th class="bg-white text-center"> {{"current_place_of_residence" | translate }}</th>
+              <th class="bg-white text-center"> {{"place_of_work" | translate }}</th>
+              <th class="bg-white text-center"> {{"current_job" | translate }}</th>
+              <th class="bg-white text-center"> {{"name_of_the_School" | translate }}</th>
+              <th class="bg-white text-center"> {{"level" | translate }}</th>
+              <th class="bg-white text-center"> {{"a_summary_English_Arabic" | translate }}</th>
+        
+      
+  
+              <th class="bg-white text-center"> {{"cV_in_Arabic" | translate }}</th>
+              <th class="bg-white text-center"> {{"cV_in_English" | translate }}</th>
+              <th class="bg-white text-center"> {{"intellectual_Property_for_the_submitted_work" | translate }}</th>
+ 
+              <th class="bg-white text-center"> {{"digital_copy_of_high_quality_for_the_nominated_work" | translate }}</th>
+              <th class="bg-white text-center">
+                {{"signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners" | translate }}</th>
+             
+             <th class="bg-white text-center"> {{"other_documents" | translate }}</th>
+ 
+              <th class="bg-white text-center">{{"Actions" | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of filteredAllDiscussion | paginate: { itemsPerPage: 8, currentPage: p }">
+              <td class="font-weight-bold">
+                #{{s.id}}
+              </td>
+            
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.fullName}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.nationality}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.city}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.qualification}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.specialization}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.employmentStatus}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.identificationNumber}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.homephone}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.email}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.phone}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.current_place_of_residence}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.place_of_work}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.current_job}}
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                {{s.name_of_the_School}}
+              </td>
+              <td class="text-center"    style="font-family: 'Cairo', sans-serif;">
+                {{s.level }}
+              </td>
+              <td class="text-center" tooltip="{{s.a_summary_English_Arabic }}" style="font-family: 'Cairo', sans-serif;">
+                {{s.a_summary_English_Arabic | slice:0:100}}
+              </td>
+           
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                <a href="{{imageHost+s.cV_in_Arabic}}" target="_black" class="btn btn-neutral-primary btn-sm  m-1"
+                  tooltip="{{'cV_in_Arabic' | translate }}">
+                  <span class="pe-7s-id font-size-lg"></span>
+  
+                </a>
+  
+              </td>
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                <a href="{{imageHost+s.cV_in_English}}" target="_black" class="btn btn-neutral-primary btn-sm  m-1"
+                  tooltip="{{'cV_in_English' | translate }}">
+                  <span class="pe-7s-id font-size-lg"></span>
+  
+                </a>
+  
+              </td>
+              <td class="text-center">
+                <a href="{{imageHost+s.intellectual_Property_for_the_submitted_work}}" target="_black"
+                  class="btn btn-neutral-primary btn-sm  m-1"
+                  tooltip="{{'intellectual_Property_for_the_submitted_work' | translate }}">
+                  <span class="pe-7s-id font-size-lg"></span>
+  
+                </a>
+  
+  
+              </td>
+  
+             
+  
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                <a href="{{imageHost+s.digital_copy_of_high_quality_for_the_nominated_work}}" target="_black"
+                  class="btn btn-neutral-primary btn-sm  m-1"
+                  tooltip="{{'thes_ubmitted_work_has_not_won_any_previous_awards' | translate }}">
+                  <span class="pe-7s-id font-size-lg"></span>
+  
+                </a>
+  
+  
+              </td>
+  
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                <a href="{{imageHost+s.signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners}}"
+                  target="_black" class="btn btn-neutral-primary btn-sm  m-1"
+                  tooltip="{{'signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners' | translate }}">
+                  <span class="pe-7s-id font-size-lg"></span>
+  
+                </a>
+  
+  
+              </td>
+   
+  
+         
+              <td class="text-center" style="font-family: 'Cairo', sans-serif;">
+                <a href="{{imageHost+s.other_documents}}" target="_black" class="btn btn-neutral-primary btn-sm  m-1"
+                  tooltip="{{'other_documents' | translate }}">
+                  <span class="pe-7s-id font-size-lg"></span>
+  
+                </a>
+  
+  
+              </td>
+  
+  
+  
+  
+  
+  
+              <td class="text-center">
+  
+                <a (click)="updatetask('edit',s.id)" class="btn btn-neutral-primary btn-sm  m-1" tooltip="Edit">
+                  <span class="pe-7s-note font-size-lg"></span>
+  
+                </a>
+                <a (click)="deleteTask(s.id)" class="btn btn-danger btn-sm m-1" tooltip="Delete">
+                  <span class="pe-7s-trash font-size-lg "></span>
+  
+                </a>
+  
+  
+              </td>
+            </tr>
+  
+  
+          </tbody>
+        </table>
+      </div>
+      <div class="card-footer py-3 d-flex justify-content-center">
+        <pagination-controls previousLabel="Previous" nextLabel="Next" class="pagination-icons pagination-first"
+          (pageChange)="p = $event"></pagination-controls>
+  
+  
+      </div>
+    </div>
+  
+  </div>
+  
+  <div *ngIf="currentPage === 'add'">
+  
+    <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+      {{"Add New Account" | translate }}
+    </div><br>
+    <div class="card cardinmob">
+      <form [formGroup]="Userform" (submit)="onSubmit(Userform.value)">
+  
+  
+        <div class="form-row">
+  
+  
+  
+      
+            <div class="col-lg-12 col-md-12">
+  
+       
+                <div class="row">
+         
+      
+                  <div class="col-lg-4">
+                    <div class="text-center" style="text-align: center; width: 100% ;">
+                      <img [src]="imgSrc3" class="inimage2" (click)="fileUploader3.click()">
+                    </div>
+                    <br>
+      
+                    <fieldset class="form-group">
+      
+                      <div class="custom-file  mx-auto d-block">
+                        <input type="file" accept="file/*" #fileUploader3 (change)="showPreview3($event)"
+                          class="custom-file-input" id="inputGroupFile01">
+                        <label class="custom-file-label" for="inputGroupFile01">{{'cV_in_Arabic'|translate}}</label>
+                      </div>
+      
+      
+      
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="text-center" style="text-align: center; width: 100% ;">
+                      <img [src]="imgSrc4" class="inimage2" (click)="fileUploader4.click()">
+                    </div>
+                    <br>
+      
+                    <fieldset class="form-group">
+      
+                      <div class="custom-file  mx-auto d-block">
+                        <input type="file" accept="file/*" #fileUploader4 (change)="showPreview4($event)"
+                          class="custom-file-input" id="inputGroupFile01">
+                        <label class="custom-file-label" for="inputGroupFile01">{{'cV_in_English'|translate}}</label>
+                      </div>
+      
+      
+      
+                    </fieldset>
+                  </div>
+      
+                </div>
+                <div class="row">
+          
+                  <div class="col-lg-4">
+                    <div class="text-center" style="text-align: center; width: 100% ;">
+                      <img [src]="imgSrc6" class="inimage2" (click)="fileUploader6.click()">
+                    </div>
+                    <br>
+      
+                    <fieldset class="form-group">
+      
+                      <div class="custom-file  mx-auto d-block">
+                        <input type="file" accept="file/*" #fileUploader6 (change)="showPreview6($event)"
+                          class="custom-file-input" id="inputGroupFile01">
+                        <label class="custom-file-label" for="inputGroupFile01">{{'intellectual_Property_for_the_submitted_work'|translate |slice:0:30}}</label>
+                      </div>
+      
+      
+      
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="text-center" style="text-align: center; width: 100% ;">
+                      <img [src]="imgSrc8" class="inimage2" (click)="fileUploader8.click()">
+                    </div>
+                    <br>
+      
+                    <fieldset class="form-group">
+      
+                      <div class="custom-file  mx-auto d-block">
+                        <input type="file" accept="file/*" #fileUploader8 (change)="showPreview8($event)"
+                          class="custom-file-input" id="inputGroupFile01">
+                        <label class="custom-file-label" for="inputGroupFile01">{{'digital_copy_of_high_quality_for_the_nominated_work'|translate|slice:0:30}}</label>
+                      </div>
+      
+      
+      
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="text-center" style="text-align: center; width: 100% ;">
+                      <img [src]="imgSrc9" class="inimage2" (click)="fileUploader9.click()">
+                    </div>
+                    <br>
+      
+                    <fieldset class="form-group">
+      
+                      <div class="custom-file  mx-auto d-block">
+                        <input type="file" accept="file/*" #fileUploader9 (change)="showPreview9($event)"
+                          class="custom-file-input" id="inputGroupFile01">
+                        <label class="custom-file-label" for="inputGroupFile01">{{'signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners'|translate|slice:0:30}}</label>
+                      </div>
+      
+      
+      
+                    </fieldset>
+                  </div>
+      
+      
+                </div>
+      
+                <div class="row">
+               
+      
+                </div>
+      
+      
+      
+                <div class="row">
+       
+                  <div class="col-lg-4">
+                    <div class="text-center" style="text-align: center; width: 100% ;">
+                      <img [src]="imgSrc12" class="inimage2" (click)="fileUploader12.click()">
+                    </div>
+                    <br>
+      
+                    <fieldset class="form-group">
+      
+                      <div class="custom-file  mx-auto d-block">
+                        <input type="file" accept="file/*" #fileUploader12 (change)="showPreview12($event)"
+                          class="custom-file-input" id="inputGroupFile01">
+                        <label class="custom-file-label" for="inputGroupFile01">{{'other_documents'|translate|slice:0:30}}</label>
+                      </div>
+      
+      
+      
+                    </fieldset>
+                  </div>
+      
+      
+                </div>
+      
+      
+      
+              </div>
+ 
+  
+  
+          <div class="form-group col-md-12 mb-2">
+            <label for="qualification">{{"Select User" | translate}} </label>
+  
+            <select formControlName="user_Id"  class="custom-select" id="qualification">
+              <option  value=""   selected>{{'Select'|translate}}</option>
+              <option *ngFor = "let x of users" value="{{x.id}}">{{x.fullName}}</option>
+              
+            </select>
+  
+          </div>
+  
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label for="fullName">{{"Full Name" | translate }}</label>
+              <input class="form-control  " id="fullName" formControlName="fullName" name="fullName" placeholder=""
+                type="text"></div>
+          </div>
+  
+          <div class="col-md-6">
+            <div class="position-relative form-group"><label for="homephone">{{"Home Phone" | translate }}</label>
+              <input class="form-control  " id="homephone" formControlName="homephone" name="homephone" placeholder=""
+                type="number"></div>
+          </div>
+  
+          <div class="col-md-6">
+            <div class="position-relative form-group"><label for="phone"> {{"Phone" | translate }}</label>
+              <input class="form-control   " id="phone" formControlName="phone" name="phone" placeholder="" type="number">
+            </div>
+          </div>
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label for="email">{{"Email" | translate }}</label>
+              <input class="form-control   " id="email" formControlName="email" name="email" placeholder="" type="email">
+            </div>
+          </div>
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="identificationNumber">{{"ID Number" | translate }}</label>
+              <input class="form-control  " id="identificationNumber" formControlName="identificationNumber"
+                name="identificationNumber" placeholder="" type="number"></div>
+          </div>
+  
+  
+  
+          <div class="form-group col-md-12 mb-2">
+            <label for="qualification">{{"Qualification" | translate}} </label>
+  
+            <select formControlName="qualification" class="custom-select" id="qualification">
+  
+              <option value="Primary">{{"Primary" | translate }}</option>
+              <option value="Intermediate ">{{"Intermediate" | translate }}</option>
+              <option value="Secondary">{{"Secondary" | translate }}</option>
+              <option value="Diploma">{{"Diploma" | translate }}</option>
+              <option value="Bachelor">{{"Bachelor" | translate }}</option>
+              <option value="Master ">{{"Master" | translate }}</option>
+              <option value="Doctorate ">{{"Doctorate" | translate }}</option>
+              <option value="Others ">{{"Others" | translate }}</option>
+            </select>
+  
+          </div>
+  
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="specialization">{{"Specialization" | translate }}</label>
+              <input class="form-control" id="specialization" formControlName="specialization" name="specialization"
+                placeholder="" type="text"></div>
+          </div>
+  
+          <div class="form-group col-md-12 mb-2">
+            <label for="employmentStatus">{{"Employment Status" | translate}} </label>
+  
+            <select formControlName="employmentStatus" class="custom-select  " id="employmentStatus">
+  
+              <option value="Student">{{"Student" | translate }}</option>
+              <option value="Employer">{{"Employer" | translate }}</option>
+              <option value="Others">{{"Others" | translate }}</option>
+            </select>
+  
+          </div>
+  
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label for="nationality">{{"Nationality" | translate }}</label>
+              <input class="form-control  " id="nationality" formControlName="nationality" name="nationality"
+                placeholder="" type="text"></div>
+          </div>
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label for="city">{{"City" | translate }}</label>
+              <input class="form-control  " id="city" formControlName="city" name="city" placeholder="" type="text"></div>
+          </div>
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="current_place_of_residence">{{"current_place_of_residence" | translate }}</label>
+              <input class="form-control" id="current_place_of_residence" formControlName="current_place_of_residence" name="current_place_of_residence"
+                placeholder="" type="text"></div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="place_of_work">{{"place_of_work" | translate }}</label>
+              <input class="form-control" id="place_of_work" formControlName="place_of_work" name="place_of_work"
+                placeholder="" type="text"></div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="current_job">{{"current_job" | translate }}</label>
+              <input class="form-control" id="current_job" formControlName="current_job" name="current_job"
+                placeholder="" type="text"></div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="name_of_the_School">{{"name_of_the_School" | translate }}</label>
+              <input class="form-control" id="name_of_the_School" formControlName="name_of_the_School" name="name_of_the_School"
+                placeholder="" type="text"></div>
+          </div>
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="specialization">{{"level" | translate }}</label>
+              <input class="form-control" id="level" formControlName="level" name="level"
+                placeholder="" type="text"></div>
+          </div>
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="a_summary_English_Arabic">{{"a_summary_English_Arabic" | translate }}</label>
+                <textarea class="form-control"  formControlName="a_summary_English_Arabic" id="a_summary_English_Arabic" rows="3"></textarea>
+
+            
+            </div>
+          </div>
+   
+  
+        </div>
+  
+  
+        <div style="float: right;">
+          <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2">{{"Back" | translate }}</button>
+  
+          <button [disabled]="!isSubmitted" type="submit" class="mt-2 btn btn-primary m-2"> {{"Create" | translate }}
+          </button>
+  
+        </div>
+  
+  
+  
+  
+      </form>
+  
+  
+  
+    </div>
+  
+  
+  </div>
+  
+  <div *ngIf="currentPage === 'edit'">
+    <div class="font-size-lg font-weight-bold m-1" style="cursor: pointer; text-align: center;">
+      {{"Update Customer"|translate}}
+    </div><br>
+    <div class="card cardinmob">
+      <form [formGroup]="Userform" (submit)="onUpdate(Userform.value)">
+  
+  
+        <div class="form-row">
+  
+  
+  
+          <div class="col-lg-12 col-md-12">
+  
+       
+            <div class="row">
+
+              <div class="col-lg-4">
+                <div class="text-center" style="text-align: center; width: 100% ;">
+                  <img [src]="imgSrc3" class="inimage2" (click)="fileUploader3.click()">
+                </div>
+                <br>
+  
+                <fieldset class="form-group">
+  
+                  <div class="custom-file  mx-auto d-block">
+                    <input type="file" accept="file/*" #fileUploader3 (change)="showPreview3($event)"
+                      class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">{{'cV_in_Arabic'|translate}}</label>
+                  </div>
+  
+  
+  
+                </fieldset>
+              </div>
+              <div class="col-lg-4">
+                <div class="text-center" style="text-align: center; width: 100% ;">
+                  <img [src]="imgSrc4" class="inimage2" (click)="fileUploader4.click()">
+                </div>
+                <br>
+  
+                <fieldset class="form-group">
+  
+                  <div class="custom-file  mx-auto d-block">
+                    <input type="file" accept="file/*" #fileUploader4 (change)="showPreview4($event)"
+                      class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">{{'cV_in_English'|translate}}</label>
+                  </div>
+  
+  
+  
+                </fieldset>
+              </div>
+              <div class="col-lg-4">
+                <div class="text-center" style="text-align: center; width: 100% ;">
+                  <img [src]="imgSrc6" class="inimage2" (click)="fileUploader6.click()">
+                </div>
+                <br>
+  
+                <fieldset class="form-group">
+  
+                  <div class="custom-file  mx-auto d-block">
+                    <input type="file" accept="file/*" #fileUploader6 (change)="showPreview6($event)"
+                      class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">{{'intellectual_Property_for_the_submitted_work'|translate |slice:0:30}}</label>
+                  </div>
+  
+  
+  
+                </fieldset>
+              </div>
+            </div>
+            <div class="row">
+          
+           
+
+              <div class="col-lg-4">
+                <div class="text-center" style="text-align: center; width: 100% ;">
+                  <img [src]="imgSrc8" class="inimage2" (click)="fileUploader8.click()">
+                </div>
+                <br>
+  
+                <fieldset class="form-group">
+  
+                  <div class="custom-file  mx-auto d-block">
+                    <input type="file" accept="file/*" #fileUploader8 (change)="showPreview8($event)"
+                      class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">{{'digital_copy_of_high_quality_for_the_nominated_work'|translate|slice:0:30}}</label>
+                  </div>
+  
+  
+  
+                </fieldset>
+              </div>
+              <div class="col-lg-4">
+                <div class="text-center" style="text-align: center; width: 100% ;">
+                  <img [src]="imgSrc9" class="inimage2" (click)="fileUploader9.click()">
+                </div>
+                <br>
+  
+                <fieldset class="form-group">
+  
+                  <div class="custom-file  mx-auto d-block">
+                    <input type="file" accept="file/*" #fileUploader9 (change)="showPreview9($event)"
+                      class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">{{'signed_copy_of_the_Delegation_and_responsibility_consent_of_any_partners'|translate|slice:0:30}}</label>
+                  </div>
+  
+  
+  
+                </fieldset>
+              </div>
+  
+              <div class="col-lg-4">
+                <div class="text-center" style="text-align: center; width: 100% ;">
+                  <img [src]="imgSrc12" class="inimage2" (click)="fileUploader12.click()">
+                </div>
+                <br>
+  
+                <fieldset class="form-group">
+  
+                  <div class="custom-file  mx-auto d-block">
+                    <input type="file" accept="file/*" #fileUploader12 (change)="showPreview12($event)"
+                      class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">{{'other_documents'|translate|slice:0:30}}</label>
+                  </div>
+  
+  
+  
+                </fieldset>
+              </div>
+            </div>
+  
+     
+  
+  
+          </div>
+  
+         
+  
+  
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label for="fullName">{{"Full Name" | translate }}</label>
+              <input class="form-control  " id="fullName" formControlName="fullName" name="fullName" placeholder=""
+                type="text"></div>
+          </div>
+  
+          <div class="col-md-6">
+            <div class="position-relative form-group"><label for="homephone">{{"Home Phone" | translate }}</label>
+              <input class="form-control  " id="homephone" formControlName="homephone" name="homephone" placeholder=""
+                type="number"></div>
+          </div>
+  
+          <div class="col-md-6">
+            <div class="position-relative form-group"><label for="phone"> {{"Phone" | translate }}</label>
+              <input class="form-control   " id="phone" formControlName="phone" name="phone" placeholder="" type="number">
+            </div>
+          </div>
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label for="email">{{"Email" | translate }}</label>
+              <input class="form-control   " id="email" formControlName="email" name="email" placeholder="" type="email">
+            </div>
+          </div>
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="identificationNumber">{{"ID Number" | translate }}</label>
+              <input class="form-control  " id="identificationNumber" formControlName="identificationNumber"
+                name="identificationNumber" placeholder="" type="number"></div>
+          </div>
+  
+  
+  
+          <div class="form-group col-md-12 mb-2">
+            <label for="qualification">{{"Qualification" | translate}} </label>
+  
+            <select formControlName="qualification" class="custom-select" id="qualification">
+  
+              <option value="Primary">{{"Primary" | translate }}</option>
+              <option value="Intermediate ">{{"Intermediate" | translate }}</option>
+              <option value="Secondary">{{"Secondary" | translate }}</option>
+              <option value="Diploma">{{"Diploma" | translate }}</option>
+              <option value="Bachelor">{{"Bachelor" | translate }}</option>
+              <option value="Master ">{{"Master" | translate }}</option>
+              <option value="Doctorate ">{{"Doctorate" | translate }}</option>
+              <option value="Others ">{{"Others" | translate }}</option>
+            </select>
+  
+          </div>
+  
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="specialization">{{"Specialization" | translate }}</label>
+              <input class="form-control" id="specialization" formControlName="specialization" name="specialization"
+                placeholder="" type="text"></div>
+          </div>
+  
+          <div class="form-group col-md-12 mb-2">
+            <label for="employmentStatus">{{"Employment Status" | translate}} </label>
+  
+            <select formControlName="employmentStatus" class="custom-select  " id="employmentStatus">
+  
+              <option value="Student">{{"Student" | translate }}</option>
+              <option value="Employer">{{"Employer" | translate }}</option>
+              <option value="Others">{{"Others" | translate }}</option>
+            </select>
+  
+          </div>
+  
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label for="nationality">{{"Nationality" | translate }}</label>
+              <input class="form-control  " id="nationality" formControlName="nationality" name="nationality"
+                placeholder="" type="text"></div>
+          </div>
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label for="city">{{"City" | translate }}</label>
+              <input class="form-control  " id="city" formControlName="city" name="city" placeholder="" type="text"></div>
+          </div>
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="current_place_of_residence">{{"current_place_of_residence" | translate }}</label>
+              <input class="form-control" id="current_place_of_residence" formControlName="current_place_of_residence" name="current_place_of_residence"
+                placeholder="" type="text"></div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="place_of_work">{{"place_of_work" | translate }}</label>
+              <input class="form-control" id="place_of_work" formControlName="place_of_work" name="place_of_work"
+                placeholder="" type="text"></div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="current_job">{{"current_job" | translate }}</label>
+              <input class="form-control" id="current_job" formControlName="current_job" name="current_job"
+                placeholder="" type="text"></div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="name_of_the_School">{{"name_of_the_School" | translate }}</label>
+              <input class="form-control" id="name_of_the_School" formControlName="name_of_the_School" name="name_of_the_School"
+                placeholder="" type="text"></div>
+          </div>
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="specialization">{{"level" | translate }}</label>
+              <input class="form-control" id="level" formControlName="level" name="level"
+                placeholder="" type="text"></div>
+          </div>
+  
+          <div class="col-md-12">
+            <div class="position-relative form-group"><label
+                for="a_summary_English_Arabic">{{"a_summary_English_Arabic" | translate }}</label>
+                <textarea class="form-control"  formControlName="a_summary_English_Arabic" id="a_summary_English_Arabic" rows="3"></textarea>
+
+            
+            </div>
+          </div>
+         
+        </div>
+  
+  
+  
+  
+        <div style="float: right;">
+          <button (click)="showPage('list')" class="mt-2 btn btn-dark m-2"> {{"Back"|translate}}</button>
+  
+          <button type="submit" class="mt-2 btn btn-primary m-2"> {{"Update"|translate}}</button>
+  
+        </div>
+  
+  
+  
+  
+      </form>
+  
+  
+  
+    </div>
+  </div>

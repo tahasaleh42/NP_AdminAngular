@@ -35,7 +35,7 @@ import { AccordionModule } from 'ngx-bootstrap';
 // NGX Bootstrap Alert
 import { AlertModule } from 'ngx-bootstrap';
 import { NgApexchartsModule } from 'ng-apexcharts';
-
+import { ArtsFormComponent } from './Auth/arts-form/arts-form.component';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -430,7 +430,20 @@ import { CityComponent } from './Components/main-place/city/city.component';
 import { OrganizationsComponent } from './Components/organizations/organizations.component';
 import { OrgUsersComponent } from './Components/organizations/org-users/org-users.component';
 import { NominationFormOrgComponent } from './Components/nomination-form-org/nomination-form-org.component';
+import { SingleSocialFormComponent } from './Components/single-social-form/single-social-form.component';
+import { SingleNaturalScienceComponent } from './Components/single-natural-science/single-natural-science.component';
+import { SingleMedicinFormComponent } from './Components/single-medicin-form/single-medicin-form.component';
+import { SingleEqiteFormComponent } from './Components/single-eqite-form/single-eqite-form.component';
+import { SingleEconomicFormComponent } from './Components/single-economic-form/single-economic-form.component';
+import { SingleArtsFormComponent } from './Components/single-arts-form/single-arts-form.component';
+import { OrgArtsFormComponent } from './Components/org-arts-form/org-arts-form.component';
+import { OrgEconomicFormComponent } from './Components/org-economic-form/org-economic-form.component';
+import { OrgEqiteFormComponent } from './Components/org-eqite-form/org-eqite-form.component';
+import { OrgMedicinFormComponent } from './Components/org-medicin-form/org-medicin-form.component';
+import { OrgNaturalScienceComponent } from './Components/org-natural-science/org-natural-science.component';
+import { OrgSocialFormComponent } from './Components/org-social-form/org-social-form.component';
 
+      
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -442,6 +455,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HeaderComponent,
+    ArtsFormComponent,
+ 
     HeaderDrawerComponent,
     HeaderUserboxComponent,
     HeaderSearchComponent,
@@ -490,6 +505,20 @@ export function HttpLoaderFactory(http: HttpClient) {
     OrgUsersComponent,
     NominationFormOrgComponent,
     SliderComponent,
+    SingleSocialFormComponent,
+    SingleNaturalScienceComponent,
+    SingleMedicinFormComponent,
+    SingleEqiteFormComponent,
+    SingleEconomicFormComponent,
+    SingleArtsFormComponent,
+    OrgArtsFormComponent,
+    OrgEconomicFormComponent,
+    OrgEqiteFormComponent,
+    OrgMedicinFormComponent,
+    OrgNaturalScienceComponent,
+    OrgSocialFormComponent,
+
+   
 
 
   ],

@@ -143,6 +143,8 @@ export class NominationformComponent implements OnInit {
 
        let resources: any[] = res["data"];
     
+       console.log(resources);
+       
       
        this.taskArr =resources;
        this.filteredAllDiscussion =resources;

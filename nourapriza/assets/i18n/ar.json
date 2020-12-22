@@ -24,14 +24,14 @@
   "News": "ألاخبار",
   "Slider": "الشريط العلوي",
   "Show Nomination Form": "عرض استمارة المقدمة من المستخدمين",
-  "Our Partner": "شركاؤنا",
+  "Our Partner": "وسائل الإعلام",
   "All Organizations": "الجهات",
 
 
 
   "Full Name": "الاسم رباعي",
-  "Home Phone": "رقم هاتف المنذل",
-  "ID Number": "رقم الهوية الوطنية للشخص الذي قام بالترشيح",
+  "Home Phone": "رقم الهاتف ",
+  "ID Number": "رقم الهوية الوطنية ",
   "Qualification": "المؤهل العلمي ",
   "Total Vedios": "عدد الفيديوهات",
   "Total News": "عدد الاخبار",
@@ -41,6 +41,20 @@
   "Total Organizations": "عدد الجهات المرشحة",
   "Site Social Media": "مواقع التواصل الاجتماعي",
   "Update Site info": "تحدث المعلومات الاساسية",
+
+ 
+  "research_leadership":"القيادة البحثية: النشر العلمي المتواتر وأن تكون المرشحة هي الباحث الرئيس في العمل المرشح للجائزة ",
+  "research_Excellence":"التميّز البحثي: نشر الأبحاث في مجلات علمية محكمة.",
+  "the_originality_of_scientific_research":"أصالة البحث العلمي وأهميته وتأثيره على الممارسة الطبية أو اقتصاد المملكة أو صنع القرار.",
+  "research_Collaboration":"التعاون البحثي: لدى المرشحة أبحاث مشتركة مع باحثين محليين ودوليين.",
+  "supervising_and_training_students_and_trainees":"الإشراف والتدريب على طلاب ومتدربين.",
+  "teaching_or_medical_clinics":"التدريس أو العيادات الطبية.",
+  "active_participation_in_national_and_international_committees_and_scientific_associations":"المشاركة الفاعلة في اللجان الوطنية والعالمية والجمعيات العلمية.",
+  "community_service":"خدمة المجتمع.",
+
+
+
+ 
 
 
   "cV_in_Arabic": "السيرة الذاتية باللغة العربية",
@@ -62,17 +76,65 @@
   "identificationNumber":"رقم الهوية",
   "homephone":"هاتف المنزل",
   "email":"الايميل",
-  "phone":"رقم الهاتف",
+  "phone":"رقم الجوال",
   "statue":"الحالة",
   "organization_Id":"رمز المؤسسة",
   "summary":"تلخيص",
   "image":"الصورة",
+  "digital_copy_of_high_quality_for_the_nominated_work":"نسخة رقمية للعمل المرشح ذات جودة عالية ",
+  "copy_of_the_first_page_of_the_nominated_work":"صورة الصفحة الأولى من العمل المرشح ويظهر عليها رقم إيداع دولي معياري للكتب ( ردمك –  ISBN)  أو الدوريات ( ردمد -  ISSN ، أو رقم معرف رقمي خاص بالأوراق البحثية المنشورة في مجلات محكمة (DOI).مع ارسال رابط إلكتروني للعمل البحثي المنشور",
+  "a_summary_English_Arabic":"ملخص عن العمل المرشح في مجال الجائزة باللغة العربية والإنجليزية ( بما لا يتجاوز 300 كلمة)* مع ملاحظة أن هذا الملخص يمكن أن يستخدم للنشر في مطبوعات الجائزة ووسائل الإعلام في حال الفوز بالجائزة",
+  "Level":"المرحلة الدراسية",
+  "name_of_the_School":"اسم المدرسة /الجامعة ",
+  "current_job":"الوظيفة الحالية",
+  "place_of_work":"جهة العمل الحالية",
+  "current_place_of_residence":"مكان الإقامة الحالي",
 
 
   "Nomination Form": "استمارات التسجيل",
   "Show Nomination Form For Organizations": "عرض الاستمارات المقدمة من الجهات",
+  "An electronic copy of the Novel Send 7 copies":"نسخة الكترونية من الرواية المرشحة للجائزة مع إرسال سبع نسخ (ورقية ) على عنوان بريد أمانة الجائزة الموضح على الموقع الإلكتروني ",
+"Export Data":"تصدير البيانات ",
 
 
+
+
+
+"a_copy_of_the_commercial_register":"صورة من السجل التجاري",
+"a_copy_of_the_facility_evaluation_from_the_Ministry_of_Human_Resources_and_Social_Development_website":"صورة من تقييم المنشأة من موقع وزارة المواد البشرية والتنمية الاجتماعية",
+"a_copy_of_the_tax_declaration_from_the_General_Authority_for_Zakat_and_Tax":"صورة الإقرار الضريبي من الهيئة العامة للزكاة والدخل",
+"proof_of_funding_round":"صورة من إثبات الحصول على أموال من جولة استثمارية (إن وجد)",
+"financial_statement_for_last_2_years":"إرفاق صورة من القوائم المالية لآخر سنتين ",
+"Copy of the first page of the nominated work":"صورة الصفحة الأولى من العمل المرشح ويظهر عليها رقم إيداع دولي معياري للكتب ( ردمك –  ISBN)  أو الدوريات ( ردمد -  ISSN ، أو رقم معرف رقمي خاص بالأوراق البحثية المنشورة في مجلات محكمة (DOI).مع ارسال رابط إلكتروني للعمل البحثي المنشور",
+ 
+
+
+"Additional Information":"معلومات اضافية",
+"brief_About_Yourself":"نبذة عن نفسك",
+"brief_About_TheFacility":"نبذة عن المنشأة ",
+"facility_Email":"الموقع الإلكتروني للمنشأة",
+"facility_Accounts_OnSocialMedia":"مواقع التواصل الاجتماعي للمنشأة",
+"your_position_in_thefacility":"منصبك في المنشأة",
+"total_number_of_fulltime_employees":"إجمالي عدد الموظفين بدوام كامل",
+"number_of_Saudi_employees":"عدد السعوديين",
+"number_of_female_employees":"عدد السيدات",
+"number_of_branches":"عدد الفروع (إن وجد)",
+"total_sales_for_2019_in_Saudi_Riyal":"إجمالي المبيعات للعام 2019 بالريال السعودي",
+"have_you_ever_received_money_of_an_investment_round":"هل سبق أن حصلت على أموال من جولة استثمارية؟",
+"the_name_of_the_facility":"اسم الجهة المانحة للأموال",
+"the_amount":"المبلغ ",
+"do_you_have_partners_in_the_facility":"هل يوجد معك شركاء في المنشأة؟ ",
+"the_number_of_partners_in_the_facility":"عدد الشركاء في المنشأة ",
+"names_of_the_partners":"أسماء الشركاء",
+
+"Ok":"موافق",
+"Show":"عرض",
+"level":"المرحلة الدراسية",
+"Candidate Organization Information":"بيانات المنظمةالتي قامت بالترشيح",
+"Org Nomination Form":"استمارة تسجيل الجهات",
+"Show Organization Info":"عرض بيانات المنظمة",
+"Organization":"اسم المنظمة",
+"Candedate Name":"اسم المرشح",
   "Primary": "ابتدائي",
   "Intermediate": "متوسط  ",
   "Secondary": "ثانوي  ",
@@ -146,8 +208,9 @@
   "Update Currency": "  تعديل العملة",
   "Send Notification": "أرسال  اشعار",
 
-
-  "Media": "ألوسائط",
+    "English Description":"الوصف بالانجليزية",
+    "English Title":"العنوان بالانجليزية",
+  "Media": "الوسائط",
   "Our Services": "الخدمات",
   "Our Work": "المناسبات",
   "Sessions": "اعمالنا",
@@ -184,7 +247,7 @@
 
   "Name": "الاسم",
   "Yes": "نعم",
-  "No": "لأا",
+  "No": "لا",
 
   "Quantity": "الكمية",
   "Offer Amount": "الخصم",
@@ -199,7 +262,7 @@
   "Phone 1": "رقم الهاتف الاول",
   "Phone 2": "رقم الهاتف الثاني",
   "Phone 3": "رقم الهاتف الثالث",
-  "Email": "الاميل",
+  "Email": "الايميل",
   "Actions": "عمليات",
   "Image": "الصورة",
   "Latitude": "خط العرض",
