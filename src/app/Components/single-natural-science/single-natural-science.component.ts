@@ -168,6 +168,12 @@ export class SingleNaturalScienceComponent implements OnInit {
        this.taskArr =resources;
        this.filteredAllDiscussion =resources;
        this.taskArrlength =resources.length;
+       let filterdData = this.taskArr.filter(function(number) {
+        return number.organization_Id == 0 &&number.user_Id != 0 && number.user_Id > 0;
+      });
+      this.filteredAllDiscussion =filterdData;
+      this.taskArrlength =this.filteredAllDiscussion.length;
+      this.taskArr =filterdData;
        this.progressRef.complete();
 
      });

@@ -75,6 +75,7 @@ export class OurServicesComponent implements OnInit {
 
          this.taskArrlength =resources.length;
          this.filteredAllDiscussion=resources;
+         
          this.progressRef.complete();
 
        });

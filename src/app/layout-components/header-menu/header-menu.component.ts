@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from "@ngx-translate/core";
 
+declare var $: any;
 var style = document.createElement("style");
 style.innerHTML = `
 
@@ -33,11 +34,11 @@ a{
      right: 0px !important;
  }
 
- .app-sidebar-fixed .app-content{
+   .app-sidebar-fixed .app-content{
   padding-left: unset  !important;
-  padding-right: 260px;
+   padding-right: 250px; 
 
- }
+ }  
 
  .app-header-fixed .app-header{
   position: fixed;
@@ -104,10 +105,69 @@ label{
 .card-box .card-header--title{
   text-align: right !important;
 }
+
+@media (min-width: 992px){
+  .app-sidebar-collapsed.app-header-fixed .app-header {
+    left: 0 !important;
+    right: 88px !important;
+}
+}
+
+
+.app-header-fixed .app-header {
+  position: fixed;
+  left: 0 !important;
+  right: 250px ;
+  margin-left: unset !important;
+  margin-right: 0 !important;
+  direction: rtl;
+}
+
+.dropdown-menu-right{
+  
+  right: -15px !important;
+}
+
+@media (min-width: 992px){
+  .app-sidebar-collapsed .app-content {
+    padding-right: 88px !important;
+}
+}
+
+.search-wrapper--grow .form-control {
+  width: 200px !important;
+}
+.app-content--inner {
+  padding: 2rem;
+  padding-top: 5rem;
+  display: flex;
+  flex: 1;
+}
+@media (max-width: 1280.98px){
+  .app-sidebar-overlay.is-active {
+    opacity: 0;
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+}
+}
+
+/* @media(max-width:991px){
+
+} */
+@media (max-width: 1280.98px){
+  
+
+.dropdown-menu-lg{
+  transform: translateX(150px) !important;
+}
+}
 `;
 
 function changeLanguageAr() {
   document.head.appendChild(style);
+
+  /*******************end add language************* */
 }
 function changeLanguageEn() {
   document.head.removeChild(style);
@@ -126,8 +186,69 @@ export class HeaderMenuComponent implements OnInit {
     this.addAr();
     this.translate.use('ar');
 
+    if($( window ).width() <= 992){
+      $( ".app-sidebar" ).addClass('display_none')
+      $( ".app-sidebar" ).removeClass('display_flex')
+      /*  app-content $('.app-header').css('right','0px') */
+      $('.app-header').css('right','0px')  
+      $('.app-content').css('padding-right','0px')  
+
+
+
+
+      $( ".navbar-toggler" ).click(function() {
+
+        if($( ".app-sidebar" ).hasClass('display_flex')){
+          
+           
+  
+  
+          $( ".app-sidebar" ).addClass('display_none')
+          $( ".app-sidebar" ).removeClass('display_flex')
+          /*  app-content $('.app-header').css('right','0px') */
+          $('.app-header').css('right','0px')  
+          $('.app-content').css('padding-right','0px')  
+        }else{
+          $( ".app-sidebar" ).addClass('display_flex')
+          $( ".app-sidebar" ).removeClass('display_none')
+          $('.app-sidebar-overlay').removeClass('is-active')
+        }
+       
+  
+      });
+  
+  
+      $( ".sidebar-navigation" ).click(function() {
+  
+        if($( ".app-sidebar" ).hasClass('display_none')){
+          $( ".app-sidebar" ).addClass('display_flex')
+          $( ".app-sidebar" ).removeClass('display_none')
+          $('.app-sidebar-overlay').removeClass('is-active')
+           
+          
+        }else{
+          $( ".app-sidebar" ).addClass('display_none')
+          $( ".app-sidebar" ).removeClass('display_flex')
+          /*  app-content $('.app-header').css('right','0px') */
+          $('.app-header').css('right','0px')  
+          $('.app-content').css('padding-right','0px')  
+           
+        }
+       
+  
+  
+      });
+    
+
+
+
+    }
+  
   }
 
+  reload(){
+    location.reload();
+  }
   addAr() {
     changeLanguageAr();
     document.getElementById("english").style.display = "inline";

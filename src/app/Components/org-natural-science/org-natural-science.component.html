@@ -109,7 +109,7 @@
                 #{{s.id}}
               </td>
               <td class="font-weight-bold">
-                <button class="btn btn-primary" (click)="open(content,s.organization_Id)">{{'Show'|translate}}</button>
+                <button class="btn btn-primary" (click)="open(content,s.organization_Id , s.id , s.identificationNumber)">{{'Show'|translate}}</button>
               </td>
               <!--         <td>
                 <div class="d-flex align-items-center">
@@ -1327,9 +1327,9 @@
   
 
   
-<ng-template #content let-c="close" let-d="dismiss">
+  <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-header text-center">
-        <h4 class="modal-title text-center">{{"Candidate Organization Information" | translate}} </h4>
+        <h4 class="modal-title text-center mx-auto">{{"Candidate Organization Information" | translate}} </h4>
         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -1344,32 +1344,60 @@
                 <tbody>
                   <tr>
                     <th scope="row" class="ostom">{{'name_of_Organization'|translate}}</th>
-                    <td colspan="2" class="text-center">{{singleOrgData?.name_of_Organization}}</td>
-               
+                    <td colspan="2" *ngIf="officialNomination?.email_of_nominating_person" class="text-center">{{singleOrgData?.name_of_Organization}}</td>
+                    <td colspan="2" *ngIf="officialNomination?.email_of_nominating_person == '' || officialNomination?.email_of_nominating_person ==null" class="text-center">{{'Not Available'|translate}}</td>
+
                   </tr>
+
+                  <tr>
+                    <th scope="row" class="ostom">{{'nominating_Organization'|translate}}</th>
+                    <td colspan="2" *ngIf="officialNomination?.nominating_Organization" class="text-center">{{officialNomination?.nominating_Organization}}</td>
+                    <td colspan="2" *ngIf="officialNomination?.nominating_Organization == '' || officialNomination?.nominating_Organization ==null" class="text-center">{{'Not Available'|translate}}</td>
+
+                  </tr>
+
                   <tr>
                     <th scope="row" class="ostom">{{'name_of_nominating_person'|translate}}</th>
-                    <td colspan="2" class="text-center">{{singleOrgData?.name_of_nominating_person}}</td>
-                 
+                    <td colspan="2" *ngIf="officialNomination?.name_of_nominating_person" class="text-center">{{officialNomination?.name_of_nominating_person}}</td>
+                    <td colspan="2" *ngIf="officialNomination?.name_of_nominating_person == '' || officialNomination?.name_of_nominating_person ==null" class="text-center">{{'Not Available'|translate}}</td>
+
                   </tr>
                   <tr>
                     <th scope="row" class="ostom">{{'email_of_nominating_person'|translate}}</th>
-                    <td colspan="2" class="text-center">{{singleOrgData?.email_of_nominating_person}}</td>
+                    <td colspan="2" *ngIf="officialNomination?.email_of_nominating_person" class="text-center">{{officialNomination?.email_of_nominating_person}}</td>
+                    <td colspan="2" *ngIf="officialNomination?.email_of_nominating_person == '' || officialNomination?.email_of_nominating_person ==null" class="text-center">{{'Not Available'|translate}}</td>
+
                    </tr>
                   <tr>
                     <th scope="row" class="ostom">{{'phone_of_nominating_person'|translate}}</th>
-                    <td colspan="2" class="text-center">{{singleOrgData?.phone_of_nominating_person}}</td>
-                   
+                    <td colspan="2"  *ngIf="officialNomination?.mobile_no_of_nominating_person" class="text-center">{{officialNomination?.mobile_no_of_nominating_person}}</td>
+                    <td colspan="2" *ngIf="officialNomination?.mobile_no_of_nominating_person == '' || officialNomination?.mobile_no_of_nominating_person ==null" class="text-center">{{'Not Available'|translate}}</td>
+
                   </tr>
                   <tr>
                     <th scope="row" class="ostom">{{'identificationNumber'|translate}}</th>
-                    <td colspan="2" class="text-center">{{singleOrgData?.identificationNumber}}</td>
-              
+                    <td colspan="2"  *ngIf="officialNomination?.email_of_nominating_person"  class="text-center">{{singleOrgData?.identificationNumber}}</td>
+                    <td colspan="2" *ngIf="officialNomination?.email_of_nominating_person == '' || officialNomination?.email_of_nominating_person ==null" class="text-center">{{'Not Available'|translate}}</td>
+
+                  </tr>
+                  <tr>
+                    <th scope="row" class="ostom">{{'Reasons for nominating'|translate}}</th>
+                    <td colspan="2" *ngIf="officialNomination?.reasons_for_nominating" tooltip="{{officialNomination?.reasons_for_nominating }}"  class="text-center">{{officialNomination?.reasons_for_nominating | slice:0:20}}</td>
+                    <td colspan="2" *ngIf="officialNomination?.reasons_for_nominating == '' || officialNomination?.reasons_for_nominating ==null" class="text-center">{{'Not Available'|translate}}</td>
+
                   </tr>
                   <tr>
                     <th scope="row" class="ostom">{{'relation_with_the_candidate'|translate}}</th>
-                    <td colspan="2" class="text-center">{{singleOrgData?.relation_with_the_candidate}}</td>
-                
+                    <td colspan="2" *ngIf="officialNomination?.relation_with_the_candidate" class="text-center">{{officialNomination?.relation_with_the_candidate}}</td>
+                    <td colspan="2" *ngIf="officialNomination?.relation_with_the_candidate == '' || officialNomination?.relation_with_the_candidate ==null" class="text-center">{{'Not Available'|translate}}</td>
+
+                  </tr>
+                  <tr>
+                    <th scope="row" class="ostom">{{'Upload a copy of an official nomination letter'|translate}}</th>
+
+                    <td colspan="2" *ngIf="officialNomination?.upload_a_copy_of_an_official_nomination"  class="text-center"> <a class="btn btn-primary" target="_black" href="{{imageHost+officialNomination?.upload_a_copy_of_an_official_nomination}}">{{'Show'|translate}}</a></td>
+                    <td colspan="2" *ngIf="officialNomination?.upload_a_copy_of_an_official_nomination == '' || officialNomination?.upload_a_copy_of_an_official_nomination ==null" class="text-center">{{'Not Available'|translate}}</td>
+
                   </tr>
                 </tbody>
               </table>

@@ -40,6 +40,7 @@ import { OrgEconomicFormComponent } from './Components/org-economic-form/org-eco
 import { OrgEqiteFormComponent } from './Components/org-eqite-form/org-eqite-form.component';
 import { OrgNaturalScienceComponent } from './Components/org-natural-science/org-natural-science.component';
 import { OrgSocialFormComponent } from './Components/org-social-form/org-social-form.component';
+import { OrgMedicinFormComponent } from './Components/org-medicin-form/org-medicin-form.component';
    
  
 
@@ -91,6 +92,7 @@ const routes: Routes = [
           { path: 'OrgEqiteForm', component: OrgEqiteFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
           { path: 'OrgNaturalScience', component: OrgNaturalScienceComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
           { path: 'OrgSocialForm', component: OrgSocialFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
+          { path: 'OrgMedicinForm', component: OrgMedicinFormComponent, pathMatch: 'full' ,canActivate: [AuthGuard]},
 
           
     ]

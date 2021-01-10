@@ -26,6 +26,7 @@
   "Show Nomination Form": "عرض استمارة المقدمة من المستخدمين",
   "Our Partner": "وسائل الإعلام",
   "All Organizations": "الجهات",
+  "Reasons for nominating":"أسباب الترشيح: ",
 
 
 
@@ -89,6 +90,7 @@
   "current_job":"الوظيفة الحالية",
   "place_of_work":"جهة العمل الحالية",
   "current_place_of_residence":"مكان الإقامة الحالي",
+  "Upload a copy of an official nomination letter":"تحميل صورة خطاب رسمي بالترشيح مع ختم تصديق الجهة على صحة بيانات وصفة الأشخاص في جهة الترشيح.",
 
 
   "Nomination Form": "استمارات التسجيل",
@@ -128,9 +130,10 @@
 "names_of_the_partners":"أسماء الشركاء",
 
 "Ok":"موافق",
+ 
 "Show":"عرض",
 "level":"المرحلة الدراسية",
-"Candidate Organization Information":"بيانات المنظمةالتي قامت بالترشيح",
+"Candidate Organization Information":"بيانات المنظمة التي قامت بالترشيح",
 "Org Nomination Form":"استمارة تسجيل الجهات",
 "Show Organization Info":"عرض بيانات المنظمة",
 "Organization":"اسم المنظمة",
@@ -154,10 +157,11 @@
   "name_of_nominating_person": "اسم الشخص الذي قام بالترشيح",
   "email_of_nominating_person": "البريد الالكتروني للقائم بالترشيح",
   "phone_of_nominating_person": "رقم جوال القائم بالترشيح",
-  "relation_with_the_candidate": "علاقته بالمرشحين",
+  "relation_with_the_candidate": "علاقة الجهة بالمرشح",
   "Government sector": "حكومية",
   "Private sector": "خاصة",
 
+  "Not Available":"لا يوجد",
   "Login": "تسجيل الدخول",
 
   "Noura Prize Dashboard": "جائزة الاميرة نورا للتميز النسائي",

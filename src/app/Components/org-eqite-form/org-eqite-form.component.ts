@@ -155,6 +155,7 @@ export class OrgEqiteFormComponent implements OnInit {
     XLSX.writeFile(wb, this.fileName);
   }
   organizations
+  toFilterIt
   ngOnInit() {
     this.progressRef = this.progress.ref('myProgress');
     this.progressRef.start();
@@ -176,6 +177,8 @@ export class OrgEqiteFormComponent implements OnInit {
        
         this.taskArr =resources;
         this.filteredAllDiscussion =resources;
+        
+        this.toFilterIt= resources
         
         let filterdData = this.taskArr.filter(function(number) {
          return number.organization_Id != 0 && number.organization_Id > 0&&number.user_Id != 0 && number.user_Id > 0;
@@ -848,16 +851,26 @@ export class OrgEqiteFormComponent implements OnInit {
 
   singleOrgData
 
+  officialNomination
 
   
   // Open default modal
-  open(content,id) {
-    this.ApiService.GetByIdOrganizations(id).subscribe(
+  open(content,organizationOfid , user_Id , identificationno) {
+    this.ApiService.GetByIdOrganizations(organizationOfid).subscribe(
       res=>{
 
 
         this.singleOrgData = res['data']
 
+        let filterdData = this.toFilterIt.filter(function(number) {
+          return number.organization_Id == organizationOfid &&number.identificationNumber == identificationno ;
+           
+        });
+
+
+        console.log(filterdData);
+        
+        this.officialNomination = filterdData[0] 
 
         this.modalService.open(content).result.then((result) => {
           this.closeResult = `Closed with: ${result}`;

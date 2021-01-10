@@ -153,18 +153,18 @@ export class OrgSocialFormComponent implements OnInit {
     /* save to file */
     XLSX.writeFile(wb, this.fileName);
   }
-
+  toFilterIt
   organizations
   ngOnInit() {
     this.progressRef = this.progress.ref('myProgress');
     this.progressRef.start();
-     this.mainid =  1
+     this.mainid =  4
      this.ApiService.GetAllOrganizations().subscribe(
       res =>{
         this.organizations =res['data']
       }
     )
-    this.ApiService.GetAll_NominationFormByServices(1).subscribe(
+    this.ApiService.GetAll_NominationFormByServices(4).subscribe(
       res => {
 
         let resources: any[] = res["data"];
@@ -174,6 +174,9 @@ export class OrgSocialFormComponent implements OnInit {
        
         this.taskArr =resources;
         this.filteredAllDiscussion =resources;
+
+        
+        this.toFilterIt= resources
         
         let filterdData = this.taskArr.filter(function(number) {
          return number.organization_Id != 0 && number.organization_Id > 0&&number.user_Id != 0 && number.user_Id > 0;
@@ -295,7 +298,7 @@ export class OrgSocialFormComponent implements OnInit {
     if (this.Userform.valid) {
       this.progressRef.start();
       formValue["statue"]=1
-      formValue["organization_Id"]=0
+     
       formValue["services_Id"]=4
 
       formValue["summary"]='--'
@@ -847,16 +850,26 @@ export class OrgSocialFormComponent implements OnInit {
 
   singleOrgData
 
+  officialNomination
 
   
   // Open default modal
-  open(content,id) {
-    this.ApiService.GetByIdOrganizations(id).subscribe(
+  open(content,organizationOfid , user_Id , identificationno) {
+    this.ApiService.GetByIdOrganizations(organizationOfid).subscribe(
       res=>{
 
 
         this.singleOrgData = res['data']
 
+        let filterdData = this.toFilterIt.filter(function(number) {
+          return number.organization_Id == organizationOfid &&number.identificationNumber == identificationno ;
+           
+        });
+
+
+        console.log(filterdData);
+        
+        this.officialNomination = filterdData[0] 
 
         this.modalService.open(content).result.then((result) => {
           this.closeResult = `Closed with: ${result}`;

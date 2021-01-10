@@ -158,8 +158,8 @@ export class SingleSocialFormComponent implements OnInit {
   ngOnInit() {
     this.progressRef = this.progress.ref('myProgress');
     this.progressRef.start();
-     this.mainid =  1
-    this.ApiService.GetAll_NominationFormByServices(1).subscribe(
+     this.mainid =  4
+    this.ApiService.GetAll_NominationFormByServices(4).subscribe(
      res => {
 
        let resources: any[] = res["data"];
@@ -170,6 +170,12 @@ export class SingleSocialFormComponent implements OnInit {
        this.taskArr =resources;
        this.filteredAllDiscussion =resources;
        this.taskArrlength =resources.length;
+       let filterdData = this.taskArr.filter(function(number) {
+        return number.organization_Id == 0 &&number.user_Id != 0 && number.user_Id > 0;
+      });
+      this.filteredAllDiscussion =filterdData;
+      this.taskArrlength =this.filteredAllDiscussion.length;
+      this.taskArr =filterdData;
        this.progressRef.complete();
 
      });
@@ -238,8 +244,8 @@ export class SingleSocialFormComponent implements OnInit {
      if (this.Userform.valid) {
       this.progressRef.start();
       formValue["statue"]=1
-      
-      formValue["services_Id"]=1
+      formValue["organization_Id"]=0
+      formValue["services_Id"]=4
 
       formValue["summary"]="--"
       formValue["cV_in_Arabic"]=this.imgPath3
@@ -282,9 +288,8 @@ export class SingleSocialFormComponent implements OnInit {
     if (this.Userform.valid) {
       this.progressRef.start();
       formValue["statue"]=1
- 
-      formValue["services_Id"]=1
-
+      formValue["organization_Id"]=0
+      formValue["services_Id"]=4
       formValue["summary"]='--'
       formValue["cV_in_Arabic"]=this.imgPath3
       formValue["cV_in_English"]=this.imgPath4
